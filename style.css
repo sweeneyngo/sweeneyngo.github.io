@@ -1,0 +1,432 @@
+
+/* Global styles */
+*.
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-family: 'Raleway', san-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+body { margin: 0;}
+
+a { text-decoration: none; }
+
+ul { list-style: none; }
+
+p { font-size: 1.6rem;}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+header {
+    width: 100%;
+    height: 5rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 1; 
+}
+
+.container {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    width: 100%;
+    display: flex;
+} .nav-title {
+    color: white;
+    font-size: 16px;
+} 
+.line {
+    position: relative;
+    width: 10em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden; 
+} .anim-typewriter {
+    animation: typewriter 4s steps(40) 1s 1 normal both,
+    blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+
+
+.menu-icons i {
+    font-size: 3.5rem;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+/* Sidebar customization */
+.nav-list {
+    width: 25rem;
+    height: 100vh;
+    background-color: #d7d4ed;
+    position: fixed;
+    top: 0;
+    right: -36rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: all 650ms ease-in-out;
+} .nav-list.active {
+    right: 0;
+}
+
+.close {
+    position: absolute;
+    top: 0.5rem;
+    left: 1.5rem;
+} .close i{
+    color: #00a2ff;
+}
+
+.nav-item {
+    margin: 1.0rem 0;
+    padding-left: 3rem;
+} 
+
+.nav-link {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+} .nav-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+} .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width .3s;
+}
+
+/* intro */
+.portfolio {
+}
+.intro {
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(135deg, #0c0c0c 0%, #121212ce 100%), url("images/climbing-rainbow-rocks-by-hampus-olsson-1920×1080.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.main-message {
+    width: 100%;
+    max-width: 55rem;
+    color: #fafafa;
+    text-transform: uppercase;
+} .main-message h3 {
+    font-size: 1.6rem;
+    letter-spacing: 0.3rem;
+    color: rgba(255, 255, 255, 0.493);
+    text-transform: none;
+    margin: 0.75rem 0;
+    animation: slideupoppa 1.5s ease-in-out;
+} .main-message h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 4rem;
+    margin: 0;
+    animation: opacity 2s ease-in-out;
+} .main-message p {
+    font-size: 1.6rem;
+    letter-spacing: 0.3rem;
+    color: rgba(255, 255, 255, 0.493);
+    text-transform: none;
+    margin: 0.75rem 0;
+}
+
+.btn {
+    background-color: rgb(128, 158, 240);
+    border-radius: 2rem;
+    color: #fafafa;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+
+    transition: background-color 650ms;
+} .btn:hover {
+    background-color:rgb(64, 103, 209);
+}
+
+/* portfolio */
+.portfolio {
+    padding-top: 5rem;
+}
+
+.title-heading {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    color: rgba(0,0,0,0.7);
+
+} .title-heading h3 {
+    font-size: 1.4rem;
+} .title-heading h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 5rem;
+    margin: 0.5rem 0 1rem;
+}
+
+
+.title-heading p {
+    text-transform: lowercase;
+}
+
+
+/* portoflio grid */
+.tiles {
+	width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 0.5rem;
+} .tile {
+    position: relative;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+} .image__img {
+    display: block;
+    width: 100%;
+} .image__overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: opacity 0.25s;
+
+} .image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+} 
+.image__overlay:hover {
+    opacity: 1;
+} .image__overlay:hover > * {
+    transform: translateY(0);
+}.image__title {
+    font-size: 2em;
+    font-weight: bold;
+} .image__description {
+    font-size: 1.25em;
+    margin-top: 0.25em;
+}
+
+footer {
+    padding: 1px;
+    margin: 0;
+    background-color: rgba(12, 12, 12, 0.137);
+    text-align: center;
+    color: rgba(0, 0, 0, 0.384);
+    font-size: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} .socials {
+    font-size: 2rem;
+    padding: 0 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} .social-icon:hover {
+    color: rgb(100, 126, 240);
+} .social-description {
+    margin-right: 0;
+    padding-right: 1rem;
+    font-size: 1.5rem;
+} footer p {
+    padding: 0 3rem;
+}
+
+/* Media queries */
+@media screen and (min-width: 350px) {
+    .main-message {
+        transform: translateY(40%);
+    }
+
+}
+
+@media screen and (min-width: 470px) {
+    .intro::before {
+        height: 9.4rem;
+        background: url("images/wave-medium.png");
+        background-size: cover;
+    }
+
+    .testimonials::before {
+        height: 9.4rem;
+        background: url("images/wave-medium-reversed.png");
+        background-size: cover;
+    }
+
+}
+
+@media screen and (min-width: 700px) {
+    header {
+        height: 8rem;
+    }
+    .nav-brand {
+        width: 3.5rem;
+    }
+
+    .nav-list {
+        width:initial;
+        height:initial;
+        background-color: transparent;
+        position: initial;
+        right: initial;
+        top : initial;
+        flex-direction: row;
+        transition: initial;
+    }
+
+    .menu-icons {
+        display: none;
+    }
+
+    .navi-items {
+        margin: 0 2.5rem;
+    }
+    
+    .nav-link, 
+    .current {
+        color: #fafafa;
+        position: relative;
+        font-size: 1.3rem;
+    }
+
+    .nav-line::before,
+    .current::before,
+    {
+        position: absolute;
+        content: "";
+        left: 0;
+        button:- .5rem;
+        width: 100%;
+        height: 2px;
+        transform; scaleX(0);
+        transform-origin: left;
+        transition: transform 650ms;
+    }
+
+    .current::before {
+        transform: scaleX(1);
+    }
+
+    .nav-link:hover::before {
+        transform: scaleX(1);
+    }
+
+    .intro {
+        height: 60vh;
+    }
+
+    .main-message {
+        transform: translateY(70%);
+    }
+
+    .tile-heading h1{
+        font-size: 2.5rem;
+    }
+}
+
+
+@media screen and (min-width: 950px) {
+    .intro::before {
+        height: 22.7rem;
+        background: url("images/wave-large.png");
+        background-size: cover;
+    }
+
+    .testimonials::before {
+        height: 22.7rem;
+        background: url("images/wave-larges-reversed.png");
+        background-size: cover;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .intro {
+        height: 7v5h;
+    }
+}
+
+/* Animations */
+
+@keyframes slidein {
+    0%   {transform: translateX(-50%);}
+    100% {transform: translateX(0);}
+  }
+
+  @keyframes opacity {
+    0%   {opacity: 0;}
+    100% {opacity: 100;}
+  }
+  @keyframes slideupoppa {
+    0%   {transform: translateY(100%); opacity: 0;}
+    100% {transform: translateY(0); opacity: 100;}
+  }
+  @keyframes slidedownoppa {
+    0%   {transform: translateY(-100%); opacity: 0;}
+    100% {transform: translateY(0); opacity: 100;}
+  }
+@keyframes typewriter {
+    0% {width: 0;}
+    100% {width: 14em;}
+}
+
+@keyframes blinkTextCursor {
+    0% {border-right-color: rgba(255, 255, 255, 0.75);}
+    100% {border-right-color: transparent;}
+}
+
