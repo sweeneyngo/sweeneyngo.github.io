@@ -1,5 +1,5 @@
 # home
-![](https://img.shields.io/github/actions/workflow/status/sweeneyngo/www/deploy-build.yml)
+![](https://img.shields.io/github/actions/workflow/status/sweeneyngo/home/deploy-build.yml)
 
 My personalized homepage (think: Linktree/Caard).
 
