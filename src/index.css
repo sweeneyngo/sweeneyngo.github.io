@@ -26,6 +26,12 @@ h1 {
   line-height: 1.1;
 }
 
+h6 {
+  padding: 0;
+  margin: 0.5em;
+  color: #a08675;
+}
+
 button {
   border-radius: 5rem;
   border: 2px solid transparent;

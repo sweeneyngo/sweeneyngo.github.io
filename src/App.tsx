@@ -1,5 +1,8 @@
 import './App.css'
 import { Link } from "react-router-dom";
+import { getLastCommit } from './utils/utils';
+
+import { useEffect, useState } from 'react';
 
 function App() {
 
@@ -14,6 +17,17 @@ function App() {
     return age;
   }
 
+  const [lastCommit, setLastCommit] = useState<string>("...");
+  useEffect(() => {
+    getLastCommit().then((result) => {
+      if (result === undefined) {
+        setLastCommit("N/A");
+        return;
+      }
+      setLastCommit(result);
+    });
+  }, []);
+
   return (
     <div className="card">
       <div className="dialog">
@@ -23,6 +37,9 @@ function App() {
         <div className="header">
           <h4>ifu<span className="tick">✱</span></h4>
           <h4>he/they | {getAge()}</h4>
+        </div>
+        <div className="subtext">
+          <h6>Last updated: <br />{lastCommit}</h6>
         </div>
         <div className="goto">
           <Link to="/faq"><button>faq!</button></Link>
