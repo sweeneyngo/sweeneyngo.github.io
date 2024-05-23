@@ -38,6 +38,10 @@ h4 {
   color: #8d5338;
 }
 
+.answer a {
+  color: #a73122;
+}
+
 .goto {
   display: flex;
   flex-direction: column;
@@ -72,7 +76,7 @@ h4 {
 /* Media adjustments */
 @media (min-width: 768px) and (max-width: 991px) {
   .dialog {
-    width: 15em;
+    width: 17.5em;
   }
 
   .icons a {
@@ -88,7 +92,7 @@ h4 {
 /* Mobile :320px. */
 @media (max-width: 767px) {
   .dialog {
-    width: 10em;
+    width: 12em;
   }
 
   .icons a {
