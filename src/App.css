@@ -1,0 +1,102 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h4 {
+  margin: 0;
+  font-weight: bold;
+  color: #6F4E37;
+}
+
+
+.card {
+  background-color: #e1dfd1;
+  padding: 3rem;
+}
+
+.logo {
+  height: 6em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.header {
+  padding: 0.5rem 0;
+}
+
+.dialog {
+  width: 20em;
+}
+
+.question {
+  margin-top: 1em;
+}
+
+.answer {
+  color: #8d5338;
+}
+
+.goto {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons {
+  color: #888;
+  margin: 1rem 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.icons a {
+  padding: 0 1em;
+  font-size: 0.75em;
+  color: #6F4E37;
+}
+
+.icons a svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* Decorative */
+.tick:hover {
+  color: #ee316a;
+  cursor: pointer;
+}
+
+
+/* Media adjustments */
+@media (min-width: 768px) and (max-width: 991px) {
+  .dialog {
+    width: 15em;
+  }
+
+  .icons a {
+    padding: 0 0.75em;
+  }
+
+  .icons a svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobile :320px. */
+@media (max-width: 767px) {
+  .dialog {
+    width: 10em;
+  }
+
+  .icons a {
+    padding: 0 0.5em;
+  }
+
+  .icons a svg {
+    width: 18px;
+    height: 18px;
+  }
+}
