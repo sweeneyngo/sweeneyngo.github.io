@@ -1,5 +1,3 @@
-// Fetch github last commit
-
 function convertDate(date: string) {
     return new Date(date).toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }) + " (PST)";
 }
@@ -12,4 +10,15 @@ async function getLastCommit() {
     return result;
 }
 
-export { getLastCommit }
+function getAge() {
+    var today = new Date();
+    var birthDate = new Date("2002-08-28");
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+export { getLastCommit, getAge }

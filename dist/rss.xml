@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>ifu's Blog</title>
+        <link>ifuxyl.dev</link>
+        <description>ifu's blog + personal homepage.</description>
+        <lastBuildDate>Sat, 31 Aug 2024 11:04:52 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>ifu's Blog</title>
+            <url>ifuxyl.dev/favicon.ico</url>
+            <link>ifuxyl.dev</link>
+        </image>
+        <copyright>All rights reserved 2024, ifu</copyright>
+        <item>
+            <title><![CDATA[Achieving Freedom in Music]]></title>
+            <link>ifuxyl.dev/blog/achieving-freedom-in-music</link>
+            <guid>ifuxyl.dev/blog/achieving-freedom-in-music</guid>
+            <pubDate>Fri, 30 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Achieving complete independence with music, avoiding subscriptions & pricing altogether.]]></description>
+        </item>
+    </channel>
+</rss>
