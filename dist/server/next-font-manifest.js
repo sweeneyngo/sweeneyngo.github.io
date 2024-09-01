@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/ifu/.code/home/src/app/layout\":[\"static/media/122c360d7fe6d395-s.p.woff2\",\"static/media/ba5f7ed75552623e-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
