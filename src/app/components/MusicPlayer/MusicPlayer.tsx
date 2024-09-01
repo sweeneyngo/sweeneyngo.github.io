@@ -43,6 +43,11 @@ export default function MusicPlayer({ musicFile, musicTitle, musicArtist, musicU
     const handleRestart = () => {
         if (audioRef.current) {
             audioRef.current.currentTime = 0;
+
+            if (audioRef.current.paused) {
+                audioRef.current.play();
+            }
+
             setIsPlaying(true);
         }
     }
