@@ -22,7 +22,7 @@ const mono = Fira_Code({
 
 export const metadata: Metadata = {
   title: "ifu*",
-  description: "Mainpage, serving articles & blogs, for ifu.",
+  description: "Homebase [to] -- serving articles & blogs, for ifu.",
 };
 
 export default async function RootLayout({

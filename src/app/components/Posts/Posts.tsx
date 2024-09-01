@@ -7,7 +7,8 @@ type Props = {
         title: string,
         date: string,
         tags: string,
-        description: string
+        description: string,
+        content: string
     }[];
 }
 

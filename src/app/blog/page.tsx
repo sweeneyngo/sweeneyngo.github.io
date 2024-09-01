@@ -4,6 +4,10 @@ import Posts from "../components/Posts/Posts";
 export default async function Blog() {
     const posts = getAllPosts();
     return (
-        <Posts posts={posts} />
+        <div>
+            <h1>Articles, [all] comprehensive.</h1>
+            <Posts posts={posts} />
+        </div>
+
     );
 }

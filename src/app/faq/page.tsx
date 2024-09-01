@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 export default async function Blog() {
     return (
         <div className={styles.panels}>
+            <h1>Frequently Asked Questions (FAQ)</h1>
             <p>
                 Q. What do you draw with? <br />
                 A. Photoshop + MSPaint w/ mouse. <br />

@@ -1,0 +1,75 @@
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid #adadad;
+    padding: 0.5rem 1rem;
+    color: rgb(var(--primary-blue));
+    margin: 0.5rem 0;
+}
+
+.bar p {
+    line-height: 1;
+    margin: 0;
+    font-size: 10px;
+    color: rgb(82, 82, 82);
+}
+
+.leftPanel {
+    display: inherit;
+    align-items: inherit;
+    justify-content: flex-start;
+}
+
+.leftPanel div {
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.35rem;
+}
+
+.modeButton {
+    color: rgb(82, 82, 82);
+    font-size: 14px;
+}
+
+.modeButton:hover {
+    color: rgb(var(--primary-blue));
+    cursor: pointer;
+}
+
+.progressContainer {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 4px;
+    height: 10px;
+    margin: 0 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.progressBar {
+    width: 100%;
+    height: 24px;
+    background-color: #3b82f6;
+    /* Tailwind CSS blue-500 color */
+    transition: width 0.15s ease;
+    text-align: center;
+    line-height: 24px;
+    /* Centers text vertically */
+    color: white;
+}
+
+.song {
+    padding: 0 0.75rem;
+}
+
+.song:hover {
+    color: rgb(var(--primary-blue));
+}
+
+.active {
+    color: rgb(var(--primary-blue));
+}
