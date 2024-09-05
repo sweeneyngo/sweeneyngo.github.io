@@ -106,7 +106,8 @@ p {
 
 img {
   max-width: var(--max-width);
-  width: 100%;
+  display: grid;
+  place-items: center;
 }
 
 ul {
@@ -115,7 +116,7 @@ ul {
 }
 
 pre {
-  background-color: #f4f4f4;
+
   /* Light gray background for the block */
   border: 1px solid #ddd;
   /* Border around the block */
@@ -125,13 +126,14 @@ pre {
   /* Padding inside the block */
   overflow-x: auto;
   /* Horizontal scroll for long lines */
+  margin-bottom: 1rem;
+  background-color: var(--background-rgb);
 }
 
 code {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  background-color: #f4f4f4;
-  padding: 2px 4px;
+  padding: 0px 4px;
   border-radius: 4px;
-  color: #444;
+  /* color: #444; */
 }

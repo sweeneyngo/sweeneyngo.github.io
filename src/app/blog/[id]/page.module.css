@@ -15,3 +15,8 @@
     flex-grow: 1;
     border-bottom: 1px solid gray;
 }
+
+.code {
+    background: #f5f5f5 !important;
+    margin: 0 !important;
+}

@@ -37,15 +37,13 @@ export function getAllPosts() {
         };
     });
 
-    return posts;
-
-    // return posts.sort((a, b) => {
-    //     if (a.date < b.date) {
-    //         return 1;
-    //     } else {
-    //         return -1;
-    //     }
-    // });
+    return posts.sort((a, b) => {
+        if (a.date < b.date) {
+            return 1;
+        } else {
+            return -1;
+        }
+    });
 }
 
 export function getPost(id: string) {
@@ -53,7 +51,7 @@ export function getPost(id: string) {
     const { content, data } = matter(fileData);
 
     const musicFile = data.music + ".mp3";
-    const [musicTitle, musicArtist] = data.music.split("_");
+    // const [musicTitle, musicArtist] = data.music.split("_");
 
     return {
         id,
@@ -62,8 +60,8 @@ export function getPost(id: string) {
         tags: data.tags,
         description: data.description,
         musicFile: musicFile,
-        musicTitle: musicTitle,
-        musicArtist: musicArtist,
+        musicTitle: data.musicTitle,
+        musicArtist: data.musicArtist,
         musicURI: data.musicURI,
         content: content
     }

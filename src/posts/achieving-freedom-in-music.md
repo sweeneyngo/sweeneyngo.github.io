@@ -4,6 +4,8 @@ date: "2024-08-30"
 tags: ["digital freedom", "music"]
 description: "Achieving complete independence with music, avoiding subscriptions & pricing altogether."
 music: "GLACIER_xaev"
+musicTitle: "GLACIER"
+musicArtist: "xaev"
 musicURI: "https://youtu.be/fLe50nIZO50"
 ---
 
