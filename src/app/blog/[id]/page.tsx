@@ -24,13 +24,13 @@ export default function Page({ params }: { params: { id: string } }) {
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1>{title}</h1>
             <div className={styles.subheader}>
                 <p>{formatDate(date)} • {minRead}-{maxRead} min</p>
                 <div className={styles.bar} />
             </div>
-            <MusicPlayer musicFile={musicFile} musicTitle={musicTitle} musicArtist={musicArtist} musicUri={musicURI} />
+            {/* <MusicPlayer musicFile={musicFile} musicTitle={musicTitle} musicArtist={musicArtist} musicUri={musicURI} /> */}
             {// eslint-disable-next-line
             }<Markdown children={content}
                 components={{

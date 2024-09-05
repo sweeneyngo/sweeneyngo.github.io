@@ -71,6 +71,7 @@ The algorithm doesn't come without its drawbacks. For instance it's a very memor
 
 We'll first focus on (1) reducing space via Quadtrees, then move to (2) reducing time via memoization. There will also be a section on achieving Hyperspeed using properties discovered through the algorithm's implementation.
 
+
 # Reducing Space
 ## Redundancy in Patterns?
 After exploring CGOL for some time, you may notice that there are "repeating" configurations (e.g. oscillators + still-lives).
@@ -195,7 +196,6 @@ class Node {
         }
     }
 ```
-
 You'll notice that if the quadrants are at level one, they'll be a 1x1 grid of either 0 or 1, so we can represent them as a number rather than an entire Node. This distinction is useful to label each level, which you can see in our constructor.
 
 Once we have the root node of a quadtree, we can now recursively update each level on the quadtree.

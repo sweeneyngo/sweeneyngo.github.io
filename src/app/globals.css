@@ -125,6 +125,10 @@ pre {
   padding: 10px;
   /* Padding inside the block */
   overflow-x: auto;
+  /* Adds horizontal scrollbar if needed */
+  white-space: pre;
+  /* Ensures whitespace is preserved */
+  max-width: 100%;
   /* Horizontal scroll for long lines */
   margin-bottom: 1rem;
   background-color: var(--background-rgb);

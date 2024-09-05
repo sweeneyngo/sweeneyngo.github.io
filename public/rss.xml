@@ -4,7 +4,7 @@
         <title>ifu's Blog</title>
         <link>https://ifuxyl.dev</link>
         <description>Homebase [to] -- serving articles &amp; blogs, for ifu.</description>
-        <lastBuildDate>Thu, 05 Sep 2024 10:54:07 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 05 Sep 2024 11:40:54 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <language>en</language>
@@ -82,6 +82,7 @@ It works asynchronously — at any given moment it will usually have evolved dif
 The algorithm doesn't come without its drawbacks. For instance it's a very memory intensive implementation, since it has to potentially create multiple versions of the grid to cache the results. As such it is not suitable for showing a continuous display of the [evolution](https://conwaylife.com/wiki/Evolution "Evolution") of a pattern. Moreover, HashLife performs poorly on highly chaotic patterns, since there is nothing for it to memorize, so switching to other alternatives like [QuickLife](https://conwaylife.com/wiki/QuickLife) are preferred.
 
 We'll first focus on (1) reducing space via Quadtrees, then move to (2) reducing time via memoization. There will also be a section on achieving Hyperspeed using properties discovered through the algorithm's implementation.
+
 
 # Reducing Space
 ## Redundancy in Patterns?
@@ -207,7 +208,6 @@ class Node {
         }
     }
 ```
-
 You'll notice that if the quadrants are at level one, they'll be a 1x1 grid of either 0 or 1, so we can represent them as a number rather than an entire Node. This distinction is useful to label each level, which you can see in our constructor.
 
 Once we have the root node of a quadtree, we can now recursively update each level on the quadtree.
