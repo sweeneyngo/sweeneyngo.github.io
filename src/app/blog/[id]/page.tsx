@@ -31,8 +31,8 @@ export default function Page({ params }: { params: { id: string } }) {
                 <div className={styles.bar} />
             </div>
             <MusicPlayer musicFile={musicFile} musicTitle={musicTitle} musicArtist={musicArtist} musicUri={musicURI} />
-            <Markdown
-                children={content}
+            {// eslint-disable-next-line
+            }<Markdown children={content}
                 components={{
                     code(props) {
                         const { children, className, node, ...rest } = props
@@ -40,11 +40,12 @@ export default function Page({ params }: { params: { id: string } }) {
                         return match ? (
                             <SyntaxHighlighter
                                 PreTag="div"
-                                children={String(children).replace(/\n$/, '')}
                                 language={match[1]}
                                 className={styles.code}
                                 style={solarizedlight}
-                            />
+                            >
+                                {String(children).replace(/\n$/, '')}
+                            </SyntaxHighlighter>
                         ) : (
                             <code {...rest} className={className}>
                                 {children}
@@ -62,12 +63,12 @@ export default function Page({ params }: { params: { id: string } }) {
                                 borderRadius: "4px",
                                 padding: "1rem"
                             }}>
-                                <img {...props} style={{ maxWidth: '100%', height: 'auto' }} />
+                                <img {...props} alt="" style={{ maxWidth: '100%', height: 'auto' }} />
                             </span>
                         );
                     }
                 }}
-            />
+            ></Markdown>
             <Footer />
         </div>
     );
