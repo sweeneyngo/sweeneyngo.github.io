@@ -239,7 +239,7 @@ function evolveNode(node) {
 }
 ```
 
-🟥**Hold on**. Won't the neighbors of any given node affect that node? In other words, is it feasible to run `evolveNode()` on the quadrants independently if they share neighbors between the quadrants?
+🟥 **Hold on**. Won't the neighbors of any given node affect that node? In other words, is it feasible to run `evolveNode()` on the quadrants independently if they share neighbors between the quadrants?
 
 Yes the neighbors will affect the node, so we will have to strategize some alternative solutions. The key idea is that **updating the entire node** is impossible without information from other nodes.
 
