@@ -1,7 +1,8 @@
 "use client";
 
-import { FaTwitter, FaGithub, FaYoutube } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaYoutube, FaLinkedin } from "react-icons/fa";
 import { FaAnglesUp } from "react-icons/fa6";
+import { PiReadCvLogoFill } from "react-icons/pi";
 import styles from "./Footer.module.css";
 export default function Footer() {
 
@@ -12,9 +13,10 @@ export default function Footer() {
     return (
         <div className={styles.footer}>
             <div className={styles.bar} />
-            <div><a href="https://www.x.com/ifuxyl"><FaTwitter /></a></div>
+            <div><a href="https://www.x.com/ifui0"><FaTwitter /></a></div>
             <div><a href="https://www.github.com/sweeneyngo"><FaGithub /></a></div>
-            <div><a href="https://www.youtube.com/@9ifu"><FaYoutube /></a></div>
+            <div><a href="https://www.linkedin.com/in/sweeneyngo"><FaLinkedin /></a></div>
+            <div><a href="https://www.read.cv/ifuxyl/"><PiReadCvLogoFill /></a></div>
             <div onClick={scrollToTop}><FaAnglesUp /></div>
         </div>
     );
