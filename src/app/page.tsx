@@ -19,12 +19,12 @@ export default async function Home() {
         </p>
         <MusicPlayer musicFile="bridges_Anthemics.mp3" musicTitle="bridges" musicArtist="Anthemics" musicUri="https://youtu.be/4yhy9MBzjgc" />
         <p>
-          In previous lives, I went to the University of California, Los Angeles (UCLA) where I majored in Computer Science, and a minor of Bioinformatics. My favorite courses were CS181's Automata, CS161's Fundamentals of AI, and CM122's Algorithms in Bioinformatics. <br />
+          In previous lives, I went to the University of California, Los Angeles (UCLA) where I majored in Computer Science, and a minor of Bioinformatics. My favorite courses were CS181&apos;s Automata, CS161&apos;s Fundamentals of AI, and CM122&apos;s Algorithms in Bioinformatics. <br />
 
           <br />
-          If you'd like to learn more about me, you can find me on <a href="https://twitter.com/ifui0">Twitter</a>, <a href="https://github.com/sweeneyngo">Github</a>, or <a href="https://linkedin.com/in/sweeneyngo">LinkedIn</a>. <br />
+          If you&apos;d like to learn more about me, you can find me on <a href="https://twitter.com/ifui0">Twitter</a>, <a href="https://github.com/sweeneyngo">Github</a>, or <a href="https://linkedin.com/in/sweeneyngo">LinkedIn</a>. <br />
 
-          To see what I've been working on, check out my <a href="https://read.cv/ifuxyl">CV</a>!
+          To see what I&apos;ve been working on, check out my <a href="https://read.cv/ifuxyl">CV</a>!
         </p>
         <Footer />
       </div>

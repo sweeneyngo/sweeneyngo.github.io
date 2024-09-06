@@ -10,12 +10,12 @@ export default async function Blog() {
                 A. TypeScript, React, Next.js, Vite. <br />
             </p>
             <p>
-                Q. Anything you're curious about? <br />
+                Q. Anything you&apos;re curious about? <br />
                 A. Learning Go, building graphics in C++, and trying out Rust. <br />
             </p>
             <p>
                 Q. What IDE should I use? <br />
-                A. Whatever works for you. People can say use VSCode, or IntelliJ, or even Neovim, but it highly depends on your preference & project. I often use VSCode because it's built for web applications & high customizability, but neovim is great for quick editing, and IntelliJ was more appropriate for building Java.<br />
+                A. Whatever works for you. People can say use VSCode, or IntelliJ, or even Neovim, but it highly depends on your preference & project. I often use VSCode because it&apos;s built for web applications & high customizability, but neovim is great for quick editing, and IntelliJ was more appropriate for building Java.<br />
             </p>
             <h2>For artists,</h2>
             <p>
