@@ -101,7 +101,7 @@ export default function MusicPlayer({ musicFile, musicTitle, musicArtist, musicU
                 <RiLoopRightFill />
             </div>
             <audio ref={audioRef} src={`/sounds/${musicFile}`} preload="auto" />
-            <a href={musicUri}><p className={styles.song}>{musicTitle} / {musicArtist}</p></a>
+            <a href={musicUri} className={styles.link}><p className={styles.song}>{musicTitle} / {musicArtist}</p></a>
         </div>
 
     );

@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    width: 100%;
     border: 1px solid #adadad;
     padding: 0.5rem 1rem;
     color: rgb(var(--primary-blue));
@@ -41,7 +41,7 @@
 
 .progressContainer {
     width: 100%;
-    background-color: #eee;
+    background-color: #dfdddd;
     border-radius: 4px;
     height: 10px;
     margin: 0 1rem;
@@ -66,6 +66,11 @@
     padding: 0 0.75rem;
     overflow-x: scroll;
     height: 24px;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: 400;
 }
 
 .song:hover {

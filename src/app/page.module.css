@@ -3,9 +3,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 7.5rem;
+  margin: 1.25rem;
   min-height: 100vh;
   font-family: var(--font);
+}
+
+.pageContent {
+  max-width: var(--max-width);
+  width: 100%;
+  color: #222;
 }
 
 .header {
@@ -47,9 +53,21 @@
   color: black;
 }
 
+.title {
+  position: relative;
+}
+
 .tick {
+  display: inline;
+  vertical-align: top;
+  position: absolute;
+  left: 18px;
+
   color: rgb(var(--primary-red));
   font-weight: 300;
+  font-size: 12px;
+  line-height: 100%;
+
 }
 
 .subheader {
@@ -58,40 +76,99 @@
   align-items: inherit;
   max-width: var(--max-width);
   width: 100%;
-  padding: 0.5rem 0;
 }
 
-.pageContent {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  max-width: var(--max-width);
-  width: 100%;
-  padding: 0.75rem 0;
+.gridLayout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+  grid-auto-flow: row;
+}
 
-  color: #222;
+.heading {
+  display: grid;
+  position: relative;
+  grid-column: 1/-1;
+  grid-template-columns: subgrid;
+  grid-template-rows: auto;
+}
+
+.heading h1 {
+  grid-column: 1/13;
+  position: relative;
+  letter-spacing: -.05em;
+  line-height: 4.5rem;
+}
+
+.subheading {
+  position: absolute;
+  left: 0;
+  margin-top: 0;
+}
+
+.content {
+  display: grid;
+  position: relative;
+  grid-column: 1/-1;
+  grid-template-columns: subgrid;
+  grid-template-rows: auto;
+}
+
+.subtitle {
+  grid-column: 1/8;
+  position: relative;
+  grid-template-columns: subgrid;
+  grid-template-rows: auto;
+}
+
+.section {
+  display: grid;
+  position: relative;
+  grid-column: 1/-1;
+}
+
+.smallHeading {
+
+  display: grid;
+  position: relative;
+  grid-column: 1/-1;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  margin-left: 8px;
+  border-bottom: 1px solid gray;
+}
+
+
+.description {
+  grid-column: 1/12;
+  position: relative;
+  grid-template-columns: subgrid;
+  grid-template-rows: auto;
+}
+
+.inline {
+  display: grid;
+  position: relative;
+  grid-column: 1/-1;
+  align-items: center;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.bnr {
+  filter: sepia(90%) brightness(90%);
+  cursor: pointer;
+  padding-right: 0.2rem;
 }
 
 .code {
   font-weight: 700;
   font-family: var(--font-mono);
-}
-
-.link {
-  font-weight: bold;
-  color: rgb(90, 138, 226);
-}
-
-.link:hover {
-  font-weight: bold;
-  color: rgb(43, 85, 161);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  max-width: 100%;
-  width: var(--max-width);
 }
 
 .card {
@@ -157,74 +234,11 @@
     margin: 1.25rem;
   }
 
-  .content {
-    padding: 4rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
-  }
-
-  .card {
-    padding: 1rem 2.5rem;
-  }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .center {
-    padding: 8rem 0 6rem;
-  }
-
-  .center::before {
-    transform: none;
-    height: 300px;
-  }
-
-  .description {
-    font-size: 0.8rem;
-  }
-
-  .description a {
-    padding: 1rem;
-  }
-
-  .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-  }
-
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(to bottom,
-        rgba(var(--background-start-rgb), 1),
-        rgba(var(--callout-rgb), 0.5));
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
-  }
-
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(to bottom,
-        transparent 0%,
-        rgb(var(--background-end-rgb)) 40%);
-    z-index: 1;
+  .subtitle {
+    grid-column: 1/-1;
+    position: relative;
+    grid-template-columns: subgrid;
+    grid-template-rows: auto;
   }
 }
 
@@ -232,15 +246,5 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(0deg);
   }
 }

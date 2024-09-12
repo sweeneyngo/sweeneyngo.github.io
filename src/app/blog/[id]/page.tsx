@@ -30,7 +30,19 @@ export default function Page({ params }: { params: { id: string } }) {
                 <p>{formatDate(date)} • {minRead}-{maxRead} min</p>
                 <div className={styles.bar} />
             </div>
+
+            <div className={styles.smallHeading}>
+                <small>✱ SONG OF THE DAY </small>
+                <div className={styles.divider} />
+            </div>
+
             <MusicPlayer musicFile={musicFile} musicTitle={musicTitle} musicArtist={musicArtist} musicUri={musicURI} />
+
+            <div className={styles.smallHeading}>
+                <small>✱ READY, SET, GO. </small>
+                <div className={styles.divider} />
+            </div>
+
             {// eslint-disable-next-line
             }<Markdown children={content}
                 components={{
@@ -58,7 +70,8 @@ export default function Page({ params }: { params: { id: string } }) {
                                 display: "flex",
                                 justifyContent: "center",
                                 width: "100%",
-                                border: "1px solid #ddd",
+                                border: "1px solid #cacaca",
+                                background: "gainsboro",
                                 /* Border around the block */
                                 borderRadius: "4px",
                                 padding: "1rem"
@@ -69,7 +82,6 @@ export default function Page({ params }: { params: { id: string } }) {
                     }
                 }}
             ></Markdown>
-            <Footer />
         </div>
     );
 };

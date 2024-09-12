@@ -5,11 +5,24 @@
   --font-mono: Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", ui-monospace, monospace;
-
+  --font-display: Viga, Monaco,
+    "Cascadia Mono",
+    "Segoe UI Mono",
+    "Roboto Mono",
+    "Oxygen Mono",
+    "Ubuntu Monospace",
+    "Source Code Pro",
+    "Fira Mono",
+    "Droid Sans Mono",
+    "Courier New",
+    ui-monospace,
+    monospace;
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: #f8f8f8;
+  --background-rgb: #f1f0ef;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --selection-highlight: #f3d982;
 
   --primary-glow: conic-gradient(from 180deg at 50% 50%,
       #16abff33 0deg,
@@ -72,6 +85,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  cursor: url("/cursors/cursor2.gif"), default;
 }
 
 html,
@@ -87,11 +101,20 @@ body {
 
 a {
   color: rgb(var(--primary-blue));
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 h1 {
   margin-bottom: 0.5rem;
+  font-size: 5rem;
+  font-family: var(--font-display);
+  letter-spacing: -.05em;
+  line-height: 4.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
@@ -99,9 +122,23 @@ h2 {
   border-bottom: 1px solid rgb(197, 197, 197);
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
 p {
   margin-bottom: 1rem;
-  line-height: 1.6;
+  line-height: 1.525;
+  letter-spacing: -.05em;
+  font-size: 1.1rem;
+
+}
+
+small {
+  letter-spacing: -.035em;
+  word-spacing: -.0125em;
+  font-size: 0.75rem;
+  font-family: var(--font);
 }
 
 img {
@@ -111,14 +148,22 @@ img {
 }
 
 ul {
-  margin: 0.5rem 2rem;
-  line-height: 1.6;
+  margin: 0.25rem 2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.525;
+  letter-spacing: -.05em;
+  font-size: 1.1rem;
+}
+
+ul li {
+  margin: 0.5rem 0;
 }
 
 pre {
 
   /* Light gray background for the block */
-  border: 1px solid #ddd;
+  background-color: gainsboro;
+  border: 1px solid #cacaca;
   /* Border around the block */
   border-radius: 4px;
   /* Rounded corners */
@@ -131,7 +176,6 @@ pre {
   max-width: 100%;
   /* Horizontal scroll for long lines */
   margin-bottom: 1rem;
-  background-color: var(--background-rgb);
 }
 
 code {
@@ -140,4 +184,47 @@ code {
   padding: 0px 4px;
   border-radius: 4px;
   /* color: #444; */
+}
+
+button {
+  display: inline;
+  background-color: var(--background-rgb);
+  border: 1px solid black;
+  border-radius: 8px;
+  letter-spacing: -.03em;
+  padding: 0.8rem 0.8rem;
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 1.1rem;
+
+}
+
+button:hover {
+  background-color: #353333;
+  cursor: pointer;
+  color: white;
+}
+
+/*** Works on common browsers ***/
+::selection {
+  background-color: var(--selection-highlight);
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+  background-color: var(--selection-highlight);
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+  background-color: var(--selection-highlight);
+}
+
+::-ms-selection {
+  background-color: var(--selection-highlight);
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+  background-color: var(--selection-highlight);
 }

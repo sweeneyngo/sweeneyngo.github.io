@@ -1,3 +1,4 @@
+
 export default async function Aliases() {
     return (
         <div>
@@ -9,5 +10,6 @@ export default async function Aliases() {
                 AVOID: tala, starboy, ifuxyl <br />
             </p>
         </div>
+
     );
 }
