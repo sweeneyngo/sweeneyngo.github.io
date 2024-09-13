@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 import { getAllPosts } from "@/utils/posts";
 import Button from "./components/Button/Button";
@@ -63,10 +62,10 @@ export default async function Home() {
 
         <div className={styles.section}>
           <div className={styles.inline}>
-            <a href="https://cadeion.neocities.org/"><Image width={91} height={30} className={styles.bnr} src="/bns/Cadeion_Button.webp" alt="Cadeion (at) neocities" /></a>
-            <a href="https://ceiadon.neocities.org/"><Image width={91} height={30} className={styles.bnr} src="/bns/kitebutton.webp" alt="Kite (at) neocities" /></a>
-            <a href="https://corru.observer/"><Image width={91} height={30} className={styles.bnr} src="/bns/corru.webp" alt="corru.observer (at) neocities" /></a>
-            <a href="https://obby.dog/"><Image width={91} height={30} className={styles.bnr} src="/bns/vertpushbutton.webp" alt="vert (at) neocities" /></a>
+            <a href="https://cadeion.neocities.org/"><img width={91} height={30} className={styles.bnr} src="/bns/Cadeion_Button.gif" alt="Cadeion (at) neocities" /></a>
+            <a href="https://ceiadon.neocities.org/"><img width={91} height={30} className={styles.bnr} src="/bns/kitebutton.webp" alt="Kite (at) neocities" /></a>
+            <a href="https://corru.observer/"><img width={91} height={30} className={styles.bnr} src="/bns/corru.gif" alt="corru.observer (at) neocities" /></a>
+            <a href="https://obby.dog/"><img width={91} height={30} className={styles.bnr} src="/bns/vertpushbutton.gif" alt="vert (at) neocities" /></a>
           </div>
         </div>
 

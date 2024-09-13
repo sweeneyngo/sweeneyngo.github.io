@@ -2,7 +2,6 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { FaEgg } from "react-icons/fa6";
 import styles from "./nav.module.css";
 export default function Nav() {
@@ -39,7 +38,7 @@ export default function Nav() {
             <div onClick={handleBounce}
                 className={`${styles.pocket} ${showEgg && styles.active}`}>
                 <audio ref={audioRef} src={`/sounds/riolucry.mp3`} preload="auto" />
-                <Image width={42} height={45} alt="Riolu" className={`${isBouncing && styles.bounce}`} src="/images/Riolu.png" />
+                <img width={42} height={45} alt="Riolu" className={`${isBouncing && styles.bounce}`} src="/images/Riolu.png" />
                 <div className={`${styles.diskShadow}`} />
             </div>
         </div>
