@@ -15,10 +15,10 @@ export default function Footer() {
         <footer>
             <section className={styles.footer}>
                 <div className={styles.bar} />
-                <div><a href="https://www.x.com/ifui0"><FaTwitter /></a></div>
-                <div><a href="https://www.github.com/sweeneyngo"><FaGithub /></a></div>
-                <div><a href="https://www.linkedin.com/in/sweeneyngo"><FaLinkedin /></a></div>
-                <div><a href="https://www.read.cv/ifuxyl/"><PiReadCvLogoFill /></a></div>
+                <div><a aria-label="Visit my Twitter/X" href="https://www.x.com/ifui0"><FaTwitter /></a></div>
+                <div><a aria-label="Visit my Github" href="https://www.github.com/sweeneyngo"><FaGithub /></a></div>
+                <div><a aria-label="Visit my LinkedIn" href="https://www.linkedin.com/in/sweeneyngo"><FaLinkedin /></a></div>
+                <div><a aria-label="Visit my ReadCV" href="https://www.read.cv/ifuxyl/"><PiReadCvLogoFill /></a></div>
                 <div onClick={scrollToTop}><FaAnglesUp /></div>
             </section>
             <section className={styles.small}>

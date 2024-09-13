@@ -76,7 +76,7 @@ export default function Page({ params }: { params: { id: string } }) {
                                 borderRadius: "4px",
                                 padding: "1rem"
                             }}>
-                                <img {...props} alt="" style={{ maxWidth: '100%', height: 'auto' }} />
+                                <img {...props} alt="Rendered markdown image" style={{ maxWidth: '100%', height: 'auto' }} />
                             </span>
                         );
                     }

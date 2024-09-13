@@ -1,7 +1,7 @@
 ---
 title: "The Hidden Beauty of HashLife"
 date: "2024-09-04"
-tags: ["project", "algorithm", "software"]
+tags: ["blog", "algorithm"]
 description: "Discovering the iconic algorithm for the popular zero-player game, Conway's Game of Life."
 music: "LakesideSongbook_HeavenPierceHer"
 musicTitle: "Lakeside Songbook"

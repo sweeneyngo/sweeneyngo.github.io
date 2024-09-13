@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+
+import Clock from "./components/Clock/Clock";
+import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import LastCommit from "./components/LastCommit/LastCommit";
+
 import { getLastCommit } from "@/utils/utils";
 import generateFeed from "@/utils/rss";
 
@@ -16,6 +20,7 @@ import "./globals.css";
 
 const font = Karla({
   subsets: ["latin"],
+  display: "swap",
   variable: "--font"
 });
 
@@ -44,25 +49,26 @@ export default async function RootLayout({
 }>) {
   const commit = await getLastCommit();
   await generateFeed();
+  const backgroundText = new Array(12).fill("Vouloir, cest pouvoir");
 
   return (
     <html lang="en">
       <body className={`${font.variable} ${display.variable} ${mono.variable}`}>
+        <div className={styles.backgroundText}>
+          {backgroundText.map((item, index) => <h1 key={index}>{item}</h1>)}
+        </div>
         <main className={styles.main}>
           <div className={styles.header}>
             <h3 className={styles.title}>
               <GiDiamonds /><sup className={styles.tick}>✱</sup>
             </h3>
-            <section className={styles.tabs}>
-              <p><Link href="/">/</Link></p>
-              <p><Link href="/blog">blog</Link></p>
-              <p><Link href="/rss.xml">rss</Link></p>
-              <p><Link href="/aliases">aliases</Link></p>
-              <p><Link href="/faq">faq</Link></p>
-            </section>
+            <Nav />
           </div>
           <section className={styles.subheader}>
             <LastCommit commit={commit} />
+          </section>
+          <section className={styles.subheader}>
+            <Clock />
           </section>
           <section className={styles.pageContent}>
             {children}

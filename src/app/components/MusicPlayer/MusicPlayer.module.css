@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    background-color: var(--background-rgb);
     border: 1px solid #adadad;
     padding: 0.5rem 1rem;
     color: rgb(var(--primary-blue));

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SmallBlock from "../SmallBlock/SmallBlock";
 import styles from "./posts.module.css";
 
 type Props = {
@@ -25,7 +26,7 @@ export default function Posts({ posts }: Props) {
         <div>
             {posts.map(post => (
                 <div key={post.id} className={styles.post}>
-                    <div className={styles.smallHeading}><p className={styles.date}>{parseDate(post.date)}</p> <div className={styles.divider} /></div>
+                    <div className={styles.smallHeading}><SmallBlock>{parseDate(post.date)}</SmallBlock> <div className={styles.divider} /></div>
                     <div className={styles.highlight}>
 
                         <h4 className={styles.title}><Link href={`/blog/${post.id}`}>{post.title}</Link></h4>

@@ -1,7 +1,7 @@
 ---
 title: "Achieving Freedom in Music"
 date: "2024-08-30"
-tags: ["digital freedom", "music"]
+tags: ["blog", "digital freedom"]
 description: "Achieving complete independence with music, avoiding subscriptions & pricing altogether."
 music: "GLACIER_xaev"
 musicTitle: "GLACIER"

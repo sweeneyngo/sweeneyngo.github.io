@@ -7,7 +7,7 @@ type Props = {
 export default function LastCommit({ commit }: Props) {
     return (
         <div className={styles.subtext}>
-            <h6>Last updated: <br />{commit ? commit : "No commit data found."}</h6>
+            <p className={styles.text}>Last updated: <br />{commit ? commit : "No commit data found."}</p>
         </div>
 
     );
