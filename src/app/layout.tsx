@@ -49,7 +49,7 @@ export default async function RootLayout({
 }>) {
   const commit = await getLastCommit();
   await generateFeed();
-  const backgroundText = new Array(12).fill("Vouloir, cest pouvoir");
+  const backgroundText = new Array(12).fill("4c 69 66 65 20 69 73 20 6c 69 6b 65 20 61 20 f0 9f 93 a6 20 6f 66 20 f0 9f 8d ab");
 
   return (
     <html lang="en">
