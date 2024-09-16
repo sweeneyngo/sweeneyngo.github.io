@@ -1,7 +1,12 @@
 
+"use client";
+
+import { useState, useEffect } from "react";
 import SmallBlock from "../SmallBlock/SmallBlock";
 import styles from "./clock.module.css";
 export default function Clock() {
+
+    const [dateTime, setDateTime] = useState("");
 
     function getDateTime() {
         const now = new Date();
@@ -20,11 +25,15 @@ export default function Clock() {
         return formattedDateTime;
     }
 
+    useEffect(() => {
+
+        setDateTime(getDateTime());
+    }, [])
     return (
         <div className={styles.container}>
             <div className={styles.clock}>
                 <SmallBlock>
-                    Today, it is {getDateTime()}
+                    Today, it is {dateTime}
                 </SmallBlock>
             </div>
         </div>
