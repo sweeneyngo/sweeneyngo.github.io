@@ -47,7 +47,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const commit = await getLastCommit();
   await generateFeed();
   const backgroundText = new Array(12).fill("4c 69 66 65 20 69 73 20 6c 69 6b 65 20 61 20 f0 9f 93 a6 20 6f 66 20 f0 9f 8d ab");
 
@@ -65,7 +64,7 @@ export default async function RootLayout({
             <Nav />
           </div>
           <section className={styles.subheader}>
-            <LastCommit commit={commit} />
+            <LastCommit />
           </section>
           <section className={styles.subheader}>
             <Clock />
