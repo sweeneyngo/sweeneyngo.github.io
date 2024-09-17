@@ -20,7 +20,7 @@ Passphrases are beneficial because they can be long and have high entropy, makin
 
 For example, "Cats play with yarn" is easy to guess because cats are commonly associated with yarn.
 
-Even worse, attackers can use[dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack) which reduce the entropy to the level of individual words, making the passphrase as vulnerable as a simple password.
+Even worse, attackers can use [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack) which reduce the entropy to the level of individual words, making the passphrase as vulnerable as a simple password.
 
 So, how can we achieve both the ease of remembering passphrases and the high entropy of complex passwords?
 
@@ -130,106 +130,6 @@ We can enhance the quality of our passphrases by using multi-word states instead
 Increasing the corpus size and incorporating diverse texts can also improve the generated passphrases. I’m continuously working on this to refine the results of my Markov chain implementation.
 
 For my implementation, I've built a server running the Markov chain + passphrase generation in [Go](https://go.dev/). The frontend client application was developed in Typescript + [React](https://react.dev/) and built with [Vite](https://vitejs.dev/).
-
-
-Certainly! Here's a polished version of your text with improved grammar and readability:
-
-I've been dealing with data breaches where my password was exposed. A recent breach even occurred at my own university.
-
-As a result, I’ve revisited old accounts and changed their passwords to auto-generated hashes. I’ve started using Bitwarden as my main password manager, and I’ve found it easier to integrate its services with my devices compared to LastPass.
-
-However, if someone were to force me to remember any of my passwords, I wouldn’t be able to recall them. While Bitwarden is a useful tool, there are times when I need to come up with a strong, complex password that can withstand brute force attacks. Common passwords are notorious for being easy to guess, either because they follow typical patterns or are tied to personal information (e.g., birthdays, years, names).
-
-To improve security, many people opt for passphrases. These are sequences of words that are easier to remember. Passphrases are beneficial because they can be long and have high entropy, making them resistant to brute force attacks. However, if the passphrase is too comprehensible, it may still be susceptible to guessing based on common associations.
-
-For example, "Cats play with yarn" is easy to guess because cats are commonly associated with yarn.
-
-Even worse, attackers can use dictionary attacks, which reduce the entropy to the level of individual words, making the passphrase as vulnerable as a simple password.
-
-So, how can we achieve both the ease of remembering passphrases and the high entropy of complex passwords?
-
-Motivation
-The key idea is to use "semi-comprehensible" sentences. These sentences are easier to remember than random phrases but don't have a direct connection to personal information, making them harder for attackers to guess. This is similar to how acronyms, like PEMDAS or HOMES, are easier to remember through mnemonic devices rather than the original acronym.
-
-Similarly, using uncommon, loosely connected words to create a passphrase can serve as a mnemonic device. This approach avoids the direct association with personal information, forcing attackers to rely on brute force methods.
-
-What Are Markov Chains?
-In simple terms, Markov chains are state machines. For example, if we are forecasting the weather, we have different states like sunny, windy, cloudy, etc. If the current weather is sunny, the probability of it staying sunny or changing to another state (like rainy) can be modeled with probabilities.
-
-A Markov chain doesn’t scale with time or other metrics but helps compute the next step based on the current state.
-
-
-
-For instance, a sunny day has a 90% chance of staying sunny and a 10% chance of becoming rainy.
-
-Creating Passphrases
-How does this relate to creating passphrases? We can model a sentence as a sequence of words transitioning from one to another.
-
-For example, "A cat with a hat" can be mapped as:
-
-text
-Copy code
-A -> cat -> with -> a -> hat
-Initially, each transition may have a 100% probability, but as we increase the number of sentences, the probability distribution becomes more diverse.
-
-For example, "A frog with a hat" will allow "A" to transition to either "cat" or "frog", each with a 50% probability.
-
-As we scale up with more sentences, we build a probability model for word transitions.
-
-The collection of sentences or text used to build this model is called a corpus. With this corpus, we can generate new sentences by starting with a word and choosing the next word based on probabilities.
-
-go
-Copy code
-futureWords, ok := markovChain.Transitions[currentWord]
-if !ok || len(nextSentence) == 0 {
-	return passphrase
-}
-
-nextWord = futureWords[rand.Intn(len(futureWords))]
-To find starting words, we can use capitalized words in the corpus or maintain a separate list of start words. Here’s an example of using the latter approach:
-
-go
-Copy code
-func (m *MarkovChain) addSentence(sentence string) {
-
-	words := strings.Fields(sentence)
-	length := len(words)
-
-	if length > 0 {
-		startWord := words[0]
-		m.StartWords[startWord] = true
-	}
-	// ...
-}
-
-func (m *MarkovChain) getRandomStartWord() string {
-
-	var startWords []string
-	for word := range m.StartWords {
-		startWords = append(startWords, word)
-	}
-
-	return startWords[rand.Intn(len(startWords))]
-}
-Building the Password
-To create a password from the passphrase, we can use the first letters of each word to form an acronym. To further complicate it, we can introduce "noise" by adding random symbols or numbers to the acronym. This makes it harder to remember but maintains the association with the original passphrase.
-
-go
-Copy code
-func CreatePassword(sentence string, capLevel int, noiseLevel int) (string, error) {
-
-	words := strings.Fields(sentence)
-	acronym := CreateAcronym(words)
-	noisyAcronym, err := addNoise(acronym, noiseLevel)
-
-	return strings.Join(noisyAcronym, ""), nil
-}
-Improvements
-We can enhance the quality of our passphrases by using multi-word states instead of single words. For instance, "A tree" provides more context than just "A", leading to richer phrase possibilities.
-
-Increasing the corpus size and incorporating diverse texts can also improve the generated passphrases. I’m continuously working on this to refine the results of my Markov chain implementation.
-
-For my project, I’ve built a server running the Markov chain and passphrase generation in Go. The frontend client application was developed in TypeScript with React and built using Vite.
 
 You can try it out through [this link](https://www.ifuxyl.dev/akro)!
 
