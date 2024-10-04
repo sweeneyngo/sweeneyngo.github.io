@@ -1,99 +1,96 @@
 .post {
-    margin: 0;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    position: relative;
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
 }
 
 .post span {
-    line-height: 0.5rem;
+  line-height: 0.5rem;
 }
 
 .highlight {
-    padding-top: 1.25rem;
+  padding-top: 1.25rem;
 }
 
 .highlight:hover {
-    background-color: var(--selection-highlight);
-    cursor: pointer;
+  background-color: var(--selection-highlight);
+  cursor: pointer;
 }
 
 .highlight p {
-    margin: 0;
-    padding-bottom: 0.5rem;
+  margin: 0;
+  padding-bottom: 0.5rem;
 }
 
 .highlight p:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .title {
-    margin: 0;
-    margin-top: 0.2rem;
-    line-height: 1.5rem;
-    letter-spacing: -.1em;
+  margin: 0;
+  margin-top: 0.2rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.1em;
 }
 
-
 .title a {
-    color: #222;
-    font-size: 2.25rem;
-    margin: 0;
-    text-decoration: none;
+  color: #222;
+  font-size: 2.25rem;
+  margin: 0;
+  text-decoration: none;
 }
 
 .date {
-    display: inline;
-    color: #ffffff;
-    margin: 0;
-    background: #353333;
-    font-size: 0.8rem;
+  display: inline;
+  color: #ffffff;
+  margin: 0;
+  background: #353333;
+  font-size: 0.8rem;
 
-    padding: 0rem 0.5rem;
-    font-weight: bold;
+  padding: 0rem 0.5rem;
+  font-weight: bold;
 }
 
 .smallHeading {
-
-    display: grid;
-    position: relative;
-    grid-column: 1/-1;
-    align-items: center;
-    grid-template-columns: auto 1fr;
+  display: grid;
+  position: relative;
+  grid-column: 1/-1;
+  align-items: center;
+  grid-template-columns: auto 1fr;
 }
 
 .smallHeading p {
-    line-height: 1.1rem;
-
+  line-height: 1.1rem;
 }
 
 .divider {
-    margin-left: 8px;
-    border-bottom: 1px solid gray;
+  margin-left: 8px;
+  border-bottom: 1px solid gray;
 }
 
 .tags {
-    position: inline;
-    display: flex;
-    margin-bottom: 1.0rem;
+  position: inline;
+  display: flex;
+  margin-bottom: 1rem;
 }
 
 .tag {
-    display: inline;
-    color: #222;
-    margin: 0;
-    background: var(--background-rgb);
-    border: 1px solid #cacaca;
-    font-size: 0.8rem;
+  display: inline;
+  color: #222;
+  margin: 0;
+  background: var(--background-rgb);
+  border: 1px solid #cacaca;
+  font-size: 0.8rem;
 
-    padding: 0rem 0.5rem;
-    font-weight: bold;
-    margin-right: 0.25rem;
+  padding: 0rem 0.5rem;
+  font-weight: bold;
+  margin-right: 0.25rem;
 }
 
 .tag p {
-    font-size: 0.8rem;
-    line-height: 1.1rem;
-    margin: 0;
-    font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  margin: 0;
+  font-weight: 400;
 }

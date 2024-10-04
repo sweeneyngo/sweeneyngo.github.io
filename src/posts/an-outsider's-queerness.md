@@ -1,12 +1,12 @@
 ---
 title: "An Outsider's Queerness"
-date: "2024-09-25"
-tags: ["blog"]
-description: "An exploratoration on the definition and role of an outsider, and how that emerges as pseudo-queerness, especially amongst the LGBTQ+."
-music: "Juna327_lobotomywife"
-musicTitle: "Juna 327"
-musicArtist: "lobotomy wife"
-musicURI: "https://youtu.be/b1-QRnv1jow"
+date: '2024-09-25'
+tags: ['blog', 'personal']
+description: 'An exploratoration on the definition and role of an outsider, and how that emerges as pseudo-queerness, especially amongst the LGBTQ+.'
+music: 'Juna327_lobotomywife'
+musicTitle: 'Juna 327'
+musicArtist: 'lobotomy wife'
+musicURI: 'https://youtu.be/b1-QRnv1jow'
 ---
 
 I remember a conversation I had with a close friend back in high school. She asked why I never opened up to her, depsite being friends since elementary. I thought I've always did-- I told her jokes, talked about my day, my homework, and played games with her.
@@ -29,6 +29,7 @@ But, I have a hard time trusting others. I can't bring myself to forge meaningfu
 Recently, I've met a couple of people my age. They were the perfect match for me: calm, down-to-earth, conscientous of the world, and most importantly, accepting. I found myself beaming as we talked about random topics & experiences in our lives, and I left it smiling shamelessly at how euphoric it was. I realize I might not be an introvert, or more specifically, "just" an introvert. It's not binary. It's not this or that. It's easy to treat it like zeroes and ones, but my true, authentic self requires something in the middle. It requires something that introduces external variables, possibilities, context, or anything that can constitute who I am.
 
 ## Living in Binary
+
 You're either a man or a woman. You're either masculine or feminine. You're either a dog lover or a cat lover. You're either a Democrat or a Republican.
 
 Binary is a system that represents information in two symbols, a one or a zero. Arbitrarily, the symbols' exact definition doesn't matter, but they must be different. In another way, it's like making a decision: "this" or "that".
@@ -61,7 +62,7 @@ So, a fact about me is: I am gay, and I have a story to tell.
 
 There's a [documentary](https://youtu.be/6VduIJPAHaQ?si=yunfkjWMoCGpTzQQ) addressing a large-scale issue amongst queer people called **"queer loneliness"**. I highly recommend taking a look, since it's extremely validating for those in queer spaces. We are entering a new era that openly accepts queerness to seep into facets in our life, but it is a long way from becoming the new normal. Video games I regularly play advocate for queer diversity, movies I watch are now introducing queer issues, and social media influencers have come forward as fellow queers and/or advocates for the LGBTQ+. It's definitely easier to be queer, but we can't rely on others to feel safe in our skin.
 
-Those who aren't queer, those who have a good career, a loving family, a roof over their heads-- they do not have to prove to others to be happy. They are comfortable with who they are because they are our society's definition of normal. When we start associating outside of this normal, we treat ourselves as "less". A person that is different is a person who is  **not** normal. We call these people "outsiders".
+Those who aren't queer, those who have a good career, a loving family, a roof over their heads-- they do not have to prove to others to be happy. They are comfortable with who they are because they are our society's definition of normal. When we start associating outside of this normal, we treat ourselves as "less". A person that is different is a person who is **not** normal. We call these people "outsiders".
 
 It's not just physical differences, but even mental ones. Our need to feel connected to others take priority over our need to be ourselves. Why have your own political ideas when you can lean to a specific party? Why have opinions on how to live your life when you can emulate the life of someone else? Why complicate yourself when being similar to others will make you feel less uncomfortable?
 

@@ -1,12 +1,11 @@
 .date {
-    display: inline;
-    color: #ffffff;
-    margin: 0;
-    background: #353333;
-    font-size: 0.8rem;
+  display: inline;
+  color: #ffffff;
+  margin: 0;
+  background: #353333;
+  font-size: 0.8rem;
 
-    padding: 0.1rem 0.5rem;
-    font-weight: bold;
-    line-height: 1.1rem;
-
+  padding: 0.1rem 0.5rem;
+  font-weight: bold;
+  line-height: 1.1rem;
 }

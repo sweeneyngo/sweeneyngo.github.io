@@ -1,22 +1,21 @@
 .smallHeading {
-
-    display: grid;
-    position: relative;
-    grid-column: 1/-1;
-    align-items: center;
-    grid-template-columns: auto 1fr;
+  display: grid;
+  position: relative;
+  grid-column: 1/-1;
+  align-items: center;
+  grid-template-columns: auto 1fr;
 }
 
 .divider {
-    margin-left: 8px;
-    border-bottom: 1px solid gray;
+  margin-left: 8px;
+  border-bottom: 1px solid gray;
 }
 
 .container {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .clock {
-    top: 5.75rem;
-    position: absolute;
+  top: 5.75rem;
+  position: absolute;
 }

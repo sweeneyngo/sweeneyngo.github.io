@@ -1,17 +1,17 @@
 ---
-title: "Acronyms and Markov Chains"
-date: "2024-09-15"
-tags: ["blog", "algorithm"]
-description: "Learning to associate sentence creation and password memorization, and connecting these two ideas together."
-music: "ERROR_PlasticGirl"
-musicTitle: "ERROR"
-musicArtist: "PLASTIC GIRL IN CLOSET"
-musicURI: "https://youtu.be/3RDCSySwX3k"
+title: 'Acronyms and Markov Chains'
+date: '2024-09-15'
+tags: ['blog', 'algorithm']
+description: 'Learning to associate sentence creation and password memorization, and connecting these two ideas together.'
+music: 'ERROR_PlasticGirl'
+musicTitle: 'ERROR'
+musicArtist: 'PLASTIC GIRL IN CLOSET'
+musicURI: 'https://youtu.be/3RDCSySwX3k'
 ---
 
 I've been dealing with data breaches where my password was exposed-- a recent data breach was even localized at my own university.
 
-As a result, I’ve revisited old accounts and changed their passwords to auto-generated hashes. I started using [Bitwarden](https://bitwarden.com/) as my main password manager,  and I’ve found it easier to integrate its services with my devices compared to LastPass.
+As a result, I’ve revisited old accounts and changed their passwords to auto-generated hashes. I started using [Bitwarden](https://bitwarden.com/) as my main password manager, and I’ve found it easier to integrate its services with my devices compared to LastPass.
 
 However, if someone were to force me to remember any of my passwords, I wouldn’t be able to recall them. While Bitwarden is a useful tool, there are times when I need to come up with a strong, complex password that can withstand [brute force attacks](https://www.keepersecurity.com/threats/brute-force-attack.html). [Common passwords](https://en.wikipedia.org/wiki/List_of_the_most_common_passwords) are notorious for being easy to guess, either because they follow typical patterns or are tied to personal information (e.g., birthdays, years, names).
 
@@ -62,13 +62,11 @@ As we increase the number of sentences, the probability distribution becomes mor
 
 For example, "A frog with a hat" will allow "A" to transition to either "cat" or "frog", each with a 50% probability.
 
-
 As we scale up with more sentences, we build a probability model for word transitions.
 
 The collection of sentences or text used to build this model is called a corpus. With this corpus, we can generate new sentences by starting with a word and choosing the next word based on probabilities.
 
 As a result, you'll have a sentence that may resemble phrases in literary works, text, and/or documents in the English language, but avoids mimicking it entirely.
-
 
 ```go
 futureWords, ok := markovChain.Transitions[currentWord]
@@ -135,8 +133,8 @@ You can try it out through [this link](https://www.ifuxyl.dev/akro)!
 
 ![A screenshot of akro](https://i.imgur.com/Jf5Fueu.png)
 
-
 # Sources
+
 All resources, whether for learning or information, are sourced here. Most of the images & diagrams I've used can be found through these websites. Please take a look at them! Without the wealth of knowledge from these articles, I wouldn't have arrived at the solution for this particular project.
 
 Andrew Healey's Generating Text with Markov Chains -- [https://healeycodes.com/generating-text-with-markov-chains](https://healeycodes.com/generating-text-with-markov-chains)

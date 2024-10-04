@@ -1,12 +1,12 @@
 ---
-title: "Achieving Freedom in Music"
-date: "2024-08-30"
-tags: ["blog", "digital freedom"]
-description: "Achieving complete independence with music, avoiding subscriptions & pricing altogether."
-music: "GLACIER_xaev"
-musicTitle: "GLACIER"
-musicArtist: "xaev"
-musicURI: "https://youtu.be/fLe50nIZO50"
+title: 'Achieving Freedom in Music'
+date: '2024-08-30'
+tags: ['blog', 'digital freedom']
+description: 'Achieving complete independence with music, avoiding subscriptions & pricing altogether.'
+music: 'GLACIER_xaev'
+musicTitle: 'GLACIER'
+musicArtist: 'xaev'
+musicURI: 'https://youtu.be/fLe50nIZO50'
 ---
 
 I have an unhealthy obsession with collecting things -- music is no exception. In fact, I find myself picking up new genres and artists that catch my eye. After a few hours, I've stashed away every song, live show, and/or low fidelity recording I can find in their discography.
@@ -30,7 +30,7 @@ How often do you listen to music? Are you happy with the current prices of your 
 
 Factors such as the obscurity of your favorite artists, the amount of time you spend listening, the availability of music on different devices, etc. are all important to consider when thinking about this topic.
 
-For me, my breaking point was the lack of awareness of emerging trends & artists due to the poor recommendations I was getting from Spotify. If I had stayed loyal to that platform, I wouldn't have curated the music taste I have today.  Artists like [Patricia Taxxon](https://patriciataxxon.bandcamp.com/), [Jane Remover](https://janeremover.bandcamp.com/), or [xaev](https://xaev.bandcamp.com/) would never have been able to make a significant impact on my life, and the feeling of not knowing the larger than life world of music outside of my own circle was soul crushing.
+For me, my breaking point was the lack of awareness of emerging trends & artists due to the poor recommendations I was getting from Spotify. If I had stayed loyal to that platform, I wouldn't have curated the music taste I have today. Artists like [Patricia Taxxon](https://patriciataxxon.bandcamp.com/), [Jane Remover](https://janeremover.bandcamp.com/), or [xaev](https://xaev.bandcamp.com/) would never have been able to make a significant impact on my life, and the feeling of not knowing the larger than life world of music outside of my own circle was soul crushing.
 
 I recommend that everyone should take my suggestions with a grain of salt. I encourage anyone who is skeptical to try it out yourself and see what your motive is.
 
@@ -38,7 +38,7 @@ However, if you're someone who (1) doesn't have disposable income to spend on mo
 
 For those who are still unsure, I've included a rating system of one to three asterisks based on how morally dubious the solution is.
 
-## Searching Better Alternatives (*)
+## Searching Better Alternatives (\*)
 
 When considering other alternatives, the first thing I look at is how widely available the music is on that platform. For more popular "radio-friendly" music, this is less of an issue as the publishing label/artist will ensure that their song/LP is available on all platforms.
 
@@ -56,7 +56,7 @@ To aid your search for more music, I would recommend considering [Last.fm](https
 
 A tool that I found useful for discovering genres was [Music Map](https://www.music-map.com/), which may be worth exploring!
 
-## Migrating to Self-Curation (*)
+## Migrating to Self-Curation (\*)
 
 Let's say for an ideal citizen, they purchase a LP they really enjoy from Bandcamp, and now they have the digital files in WAV to listen for free. While Spotify & Apple Music allow individuals to listen to music offline through their local library, I would recommend shifting away from these softwares and use open-source alternatives to catalog your music.
 
@@ -74,7 +74,7 @@ To give you a little taste, here is a screenshot of my all-time favorite artist,
 
 There is something magical about owning your own music, and keeping your listening space as minimal as possible. No distractions, no ads, no feeds.
 
-## Acquiring Music via Soulseek (**)
+## Acquiring Music via Soulseek (\*\*)
 
 If you can't find the music you're looking for, and you want the ability to listen to your favorite artists, I don't blame you. Most music can't geographically pass through various countries, but I want to introduce you to a client software available for Windows, Mac, and Linux called [Soulseek](https://www.slsknet.org/news/node/1).
 
@@ -88,7 +88,7 @@ As for the sharing of music, you will bear responsibility of ensuring you don't 
 
 Remember to be an active participant if you decide to use Soulseek: always share, never leech. There is no penalty, but keep in mind that you can be banned by others if they see that you haven't shared any music of your own. Soulseek wouldn't exist without its users after all!
 
-## Acquring Music through yt-dlp (**)
+## Acquring Music through yt-dlp (\*\*)
 
 If you are able to find the music through the official sources, but there is no way to download it to your local library, there is a solution for this as well.
 
@@ -100,9 +100,9 @@ For installation, follow the instructions listed in their [README](https://githu
 
 For all intents and purposes, look into the [official Wiki](https://github.com/yt-dlp/yt-dlp/wiki/Installation) if you have any questions about usage, customization, and installation.
 
-Again, keep in mind that it is a roundabout method to scrape a website for content, rather than visiting their official APIs. Therefore, I don't *necessarily* recommend this option, just because you can experience throttling or even a soft ban from the service.
+Again, keep in mind that it is a roundabout method to scrape a website for content, rather than visiting their official APIs. Therefore, I don't _necessarily_ recommend this option, just because you can experience throttling or even a soft ban from the service.
 
-## Transfering Music to Devices (*)
+## Transfering Music to Devices (\*)
 
 Once you've found a workflow that works for you, you may wonder if there are ways to migrate your files to your devices. For example, most people don't just listen to music on their PCs, but they also like the availability of the music on their smartphones, tablets, etc.
 

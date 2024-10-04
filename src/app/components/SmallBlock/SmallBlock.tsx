@@ -1,11 +1,8 @@
-
-import styles from "./smallblock.module.css";
+import styles from './smallblock.module.css';
 export default function Clock({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <p className={styles.date}>{children}</p>
-    )
+  return <p className={styles.date}>{children}</p>;
 }

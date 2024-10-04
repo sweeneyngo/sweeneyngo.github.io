@@ -1,62 +1,62 @@
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.5rem 0;
 }
 
 .bar {
-    width: 100%;
-    margin-right: 0.5rem;
-    border-bottom: 1px solid gray;
+  width: 100%;
+  margin-right: 0.5rem;
+  border-bottom: 1px solid gray;
 }
 
 .footer div {
-    font-size: 16px;
-    padding: 0 0.5rem;
-    color: rgb(82, 82, 82);
+  font-size: 16px;
+  padding: 0 0.5rem;
+  color: rgb(82, 82, 82);
 }
 
 .footer a {
-    color: rgb(82, 82, 82);
+  color: rgb(82, 82, 82);
 }
 
 .footer a:hover {
-    color: rgb(var(--primary-blue));
-    cursor: pointer;
+  color: rgb(var(--primary-blue));
+  cursor: pointer;
 }
 
 .footer div:hover {
-    color: rgb(var(--primary-blue));
-    cursor: pointer;
+  color: rgb(var(--primary-blue));
+  cursor: pointer;
 }
 
 .small {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
 }
 
 .small p {
-    font-size: 0.8rem;
-    letter-spacing: -.05em;
-    text-align: center;
-    /* Center text inside each p tag */
-    display: inherit;
-    align-content: center;
-    justify-content: center;
-    opacity: 0.6;
-    margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: -0.05em;
+  text-align: center;
+  /* Center text inside each p tag */
+  display: inherit;
+  align-content: center;
+  justify-content: center;
+  opacity: 0.6;
+  margin: 0;
 }
 
 .small span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .small svg {
-    margin: 0 2px;
-    width: 0.8em;
-    height: 0.8em;
+  margin: 0 2px;
+  width: 0.8em;
+  height: 0.8em;
 }

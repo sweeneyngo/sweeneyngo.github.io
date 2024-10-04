@@ -1,61 +1,59 @@
 .container {
-    width: 100%;
+  width: 100%;
 }
 
 .subheader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    margin-left: 0.5rem;
-    margin-bottom: 0.9rem;
-    flex-grow: 1;
-    border-bottom: 1px solid gray;
+  margin-left: 0.5rem;
+  margin-bottom: 0.9rem;
+  flex-grow: 1;
+  border-bottom: 1px solid gray;
 }
 
 .code {
+  background: #f2f2f2 !important;
+  border: 1px solid #cacaca !important;
 
-    background: #f2f2f2 !important;
-    border: 1px solid #cacaca !important;
-
-    margin: 0 !important;
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    /* Adds horizontal scrollbar if needed */
-    white-space: pre !important;
-    font-size: 0.75rem !important;
-    font-family: var(--font-mono) !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  /* Adds horizontal scrollbar if needed */
+  white-space: pre !important;
+  font-size: 0.75rem !important;
+  font-family: var(--font-mono) !important;
 }
 
 .code code {
-    margin: 0 !important;
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    /* Adds horizontal scrollbar if needed */
-    white-space: pre !important;
-    font-family: var(--font-mono) !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  /* Adds horizontal scrollbar if needed */
+  white-space: pre !important;
+  font-family: var(--font-mono) !important;
 }
 
 .smallHeading {
+  display: grid;
+  position: relative;
+  grid-column: 1/-1;
+  align-items: center;
+  grid-template-columns: auto 1fr;
 
-    display: grid;
-    position: relative;
-    grid-column: 1/-1;
-    align-items: center;
-    grid-template-columns: auto 1fr;
-
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .divider {
-    margin-left: 8px;
-    border-bottom: 1px solid gray;
+  margin-left: 8px;
+  border-bottom: 1px solid gray;
 }

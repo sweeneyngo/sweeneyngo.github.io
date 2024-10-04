@@ -52,7 +52,6 @@
   font-weight: 300;
   font-size: 12px;
   line-height: 100%;
-
 }
 
 .subheader {
@@ -81,7 +80,7 @@
 .heading h1 {
   grid-column: 1/13;
   position: relative;
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
   line-height: 4.5rem;
 }
 
@@ -113,7 +112,6 @@
 }
 
 .smallHeading {
-
   display: grid;
   position: relative;
   grid-column: 1/-1;
@@ -128,7 +126,6 @@
   margin-left: 8px;
   border-bottom: 1px solid gray;
 }
-
 
 .description {
   grid-column: 1/12;
@@ -150,7 +147,6 @@
   cursor: pointer;
   padding-right: 0.2rem;
 }
-
 
 .backgroundText {
   position: fixed;
@@ -185,7 +181,9 @@
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
 }
 
 .card span {

@@ -1,45 +1,44 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from 'next';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
-import Clock from "./components/Clock/Clock";
-import Nav from "./components/Nav/Nav";
-import Footer from "./components/Footer/Footer";
-import LastCommit from "./components/LastCommit/LastCommit";
+import Clock from './components/Clock/Clock';
+import Nav from './components/Nav/Nav';
+import Footer from './components/Footer/Footer';
+import LastCommit from './components/LastCommit/LastCommit';
 
-import { getLastCommit } from "@/utils/utils";
-import generateFeed from "@/utils/rss";
+import generateFeed from '@/utils/rss';
 
-import { GiDiamonds } from "react-icons/gi";
+import { GiDiamonds } from 'react-icons/gi';
 
-import { Karla } from "next/font/google"; // Define mainpage font
-import { Viga } from "next/font/google";
-import { Fira_Code } from "next/font/google";
+import { Karla } from 'next/font/google'; // Define mainpage font
+import { Viga } from 'next/font/google';
+import { Fira_Code } from 'next/font/google';
 
-import styles from "./page.module.css";
-import "./globals.css";
+import styles from './page.module.css';
+import './globals.css';
 
 const font = Karla({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font"
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font',
 });
 
 const display = Viga({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  variable: "--font-display"
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-display',
 });
 
 const mono = Fira_Code({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-mono",
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono',
 });
 
 export const metadata: Metadata = {
-  title: "𝙞𝒇𝙪✱",
-  description: "Homebase [to] -- serving articles & blogs, for ifu.",
+  title: '𝙞𝒇𝙪✱',
+  description: 'Homebase [to] -- serving articles & blogs, for ifu.',
 };
 
 export default async function RootLayout({
@@ -48,18 +47,23 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   await generateFeed();
-  const backgroundText = new Array(12).fill("4c 69 66 65 20 69 73 20 6c 69 6b 65 20 61 20 f0 9f 93 a6 20 6f 66 20 f0 9f 8d ab");
+  const backgroundText = new Array(12).fill(
+    '4c 69 66 65 20 69 73 20 6c 69 6b 65 20 61 20 f0 9f 93 a6 20 6f 66 20 f0 9f 8d ab',
+  );
 
   return (
     <html lang="en">
       <body className={`${font.variable} ${display.variable} ${mono.variable}`}>
         <div className={styles.backgroundText}>
-          {backgroundText.map((item, index) => <h1 key={index}>{item}</h1>)}
+          {backgroundText.map((item, index) => (
+            <h1 key={index}>{item}</h1>
+          ))}
         </div>
         <main className={styles.main}>
           <div className={styles.header}>
             <h3 className={styles.title}>
-              <GiDiamonds /><sup className={styles.tick}>✱</sup>
+              <GiDiamonds />
+              <sup className={styles.tick}>✱</sup>
             </h3>
             <Nav />
           </div>
@@ -78,6 +82,7 @@ export default async function RootLayout({
           <div className={styles.grid}></div>
         </main>
       </body>
+      <GoogleAnalytics gaId="G-V8SM7WME8B" />
     </html>
   );
 }
