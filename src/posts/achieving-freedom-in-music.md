@@ -19,7 +19,7 @@ However, I was sick of dealing with the devil; it's inexcusably expensive to buy
 
 Also, audiophiles & music fans can unanimously agree that the recommendation system of Spotify & Apple Music doesn't meet the user's needs. It suffers from a strange "tunneling" effect, where artists you listen to are merely regurgitated back into your feed, with only a handful of new artists appearing in your Discover tab based on local listening & somewhat adjacent genres.
 
-Nowadays, I've developed a system that completely eliminates all streaming services from my life, relying only on a self-curated playlist, alternative applications, options to buy music.
+Nowadays, I've developed a system that completely eliminates all streaming services from my life, relying only on a self-curated playlist, alternative applications, and options to buy music.
 
 It's important to note that I am by no means an expert on collecting music, nor am I claiming that my method is the best way to find and share music. I'm simply explaining my thought process & workflow in the hopes that you'll learn something new that you didn't know before!
 
@@ -58,9 +58,9 @@ A tool that I found useful for discovering genres was [Music Map](https://www.mu
 
 ## Migrating to Self-Curation (\*)
 
-Let's say for an ideal citizen, they purchase a LP they really enjoy from Bandcamp, and now they have the digital files in WAV to listen for free. While Spotify & Apple Music allow individuals to listen to music offline through their local library, I would recommend shifting away from these softwares and use open-source alternatives to catalog your music.
+Let's say for an ideal citizen, they purchase a LP they really enjoy from Bandcamp, and now they have the digital files in WAV to listen to for free. While Spotify & Apple Music allow individuals to listen to music offline through their local library, I would recommend shifting away from these softwares and use open-source alternatives to catalog your music.
 
-A lovely person by the name of Marcika was able to document how they were able to upload their music to a [portable MP3 player](https://www.youtube.com/watch?v=CNFgFbQONJg), which is definitely an option for those who are willing to live frugally. The video also goes more in-depth in some alternatives that I won't mention in this article, so it's worth checking out, especially if you're interesting in burning CDs, listening on a Mac, or ripping music through other means.
+A lovely person by the name of Marcika was able to document how they were able to upload their music to a [portable MP3 player](https://www.youtube.com/watch?v=CNFgFbQONJg), which is definitely an option for those who are willing to live frugally. The video also goes more in-depth in some alternatives that I won't mention in this article, so it's worth checking out, especially if you're interested in burning CDs, listening on a Mac, or ripping music through other means.
 
 For most people with PCs, I recommend [foobar2000](https://www.foobar2000.org/). For full theming support, it's heavily advised to opt for the 32bit version, not the 64bit one. At the time of writing, I've been an active user of this software for 6-7 months, and I'm utterly floored by its compatibility & features.
 
@@ -80,15 +80,15 @@ If you can't find the music you're looking for, and you want the ability to list
 
 As mentioned in its [About](https://www.slsknet.org/news/node/680), it's "ad-free, spyware-free" and is simply a file-sharing network with connected peers.
 
-To put it simply, let's say you're looking for a particular rare EP in produced in 1993, and you couldn't find it through the official sources I mentioned above. 9 times out of 10, someone else may have the files for that EP, and is sharing it publicly through Soulseek. By connecting to this client, you're now free to explore the music shared by thousands of avid users. With enough dedication, you'll be able to find not only the full list of songs, but also multiple variations with different file formats.
+To put it simply, let's say you're looking for a particular rare EP produced in 1993, and you couldn't find it through the official sources I mentioned above. 9 times out of 10, someone else may have the files for that EP, and is sharing it publicly through Soulseek. By connecting to this client, you're now free to explore the music shared by thousands of avid users. With enough dedication, you'll be able to find not only the full list of songs, but also multiple variations with different file formats.
 
-Can it illegal? Yes, absolutely, if you endorse sharing of copyrighted music. I encourage everyone to stick to non-copyrighted music/works to avoid any legal issues with copyright holders.
+Is it illegal? Yes, absolutely, if you endorse sharing of copyrighted music. I encourage everyone to stick to non-copyrighted music/works to avoid any legal issues with copyright holders.
 
 As for the sharing of music, you will bear responsibility of ensuring you don't download malware or viruses, but considering the nature of the Soulseek community, which is outwardly generous & pro-sharing, it is extremely unlikely you will encounter a virus. To be safe, check the file format of your download (safe: MP3, OGG, WAV, FLAC) and ensure you're not downloading an executable, for instance.
 
 Remember to be an active participant if you decide to use Soulseek: always share, never leech. There is no penalty, but keep in mind that you can be banned by others if they see that you haven't shared any music of your own. Soulseek wouldn't exist without its users after all!
 
-## Acquring Music through yt-dlp (\*\*)
+## Acquiring Music through yt-dlp (\*\*)
 
 If you are able to find the music through the official sources, but there is no way to download it to your local library, there is a solution for this as well.
 
@@ -102,7 +102,7 @@ For all intents and purposes, look into the [official Wiki](https://github.com/y
 
 Again, keep in mind that it is a roundabout method to scrape a website for content, rather than visiting their official APIs. Therefore, I don't _necessarily_ recommend this option, just because you can experience throttling or even a soft ban from the service.
 
-## Transfering Music to Devices (\*)
+## Transferring Music to Devices (\*)
 
 Once you've found a workflow that works for you, you may wonder if there are ways to migrate your files to your devices. For example, most people don't just listen to music on their PCs, but they also like the availability of the music on their smartphones, tablets, etc.
 

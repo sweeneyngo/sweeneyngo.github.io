@@ -20,7 +20,7 @@ Passphrases are beneficial because they can be long and have high entropy, makin
 
 For example, "Cats play with yarn" is easy to guess because cats are commonly associated with yarn.
 
-Even worse, attackers can use [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack) which reduce the entropy to the level of individual words, making the passphrase as vulnerable as a simple password.
+Even worse, attackers can use [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack) which reduces the entropy to the level of individual words, making the passphrase as vulnerable as a simple password.
 
 So, how can we achieve both the ease of remembering passphrases and the high entropy of complex passwords?
 
@@ -34,7 +34,7 @@ Similarly, using uncommon, loosely connected words to create a passphrase can se
 
 # What are Markov Chains?
 
-To put it simply, it's a state machine. Let's assume we're forcasting the weather.
+To put it simply, it's a state machine. Let's assume we're forecasting the weather.
 
 The current weather can alternate between sunny, windy, cloudy, etc. We can think of these as **"states"**. So, let's assume that the current state of the weather is sunny. If we see a raincloud approaching, we can assume that the weather can transition to a rainy state. However, we cannot be certain, as weather relies on probability.
 
@@ -42,7 +42,7 @@ A sunny weather can just as easily remain sunny, change to rainy, or even cloudy
 
 ![Markov chain](https://healeycodes.com/_next/image?url=%2Fposts%2Fgenerating-text-with-markov-chains%2Fweather-markov-chain.png&w=640&q=100)
 
-From this diagram, a sunny weather has a 90% change of being sunny, and a 10% change of being rainy.
+From this diagram, sunny weather has a 90% change of being sunny, and a 10% change of being rainy.
 
 Note that a Markov chain doesn't necessarily scale with time or any metric that increases over time. More specifically, a Markov chain helps compute the next step based on the current state.
 
@@ -71,7 +71,7 @@ As a result, you'll have a sentence that may resemble phrases in literary works,
 ```go
 futureWords, ok := markovChain.Transitions[currentWord]
 if !ok || len(nextSentence) == 0 {
-	return passphrase
+   return passphrase
 }
 
 nextWord = futureWords[rand.Intn(len(futureWords))]
@@ -84,24 +84,24 @@ To find starting words, we can (1) use capitalized words in the corpus or (2) ma
 ```go
 func (m *MarkovChain) addSentence(sentence string) {
 
-	words := strings.Fields(sentence)
-	length := len(words)
+   words := strings.Fields(sentence)
+   length := len(words)
 
-	if length > 0 {
-		startWord := words[0]
-		m.StartWords[startWord] = true
-	}
-	// ...
+   if length > 0 {
+       startWord := words[0]
+       m.StartWords[startWord] = true
+   }
+   // ...
 }
 
 func (m *MarkovChain) getRandomStartWord() string {
 
-	var startWords []string
-	for word := range m.StartWords {
-		startWords = append(startWords, word)
-	}
+   var startWords []string
+   for word := range m.StartWords {
+       startWords = append(startWords, word)
+   }
 
-	return startWords[rand.Intn(len(startWords))]
+   return startWords[rand.Intn(len(startWords))]
 }
 
 ```
@@ -113,11 +113,11 @@ To create a password from the passphrase, we can use the first letters of each w
 ```go
 func CreatePassword(sentence string, capLevel int, noiseLevel int) (string, error) {
 
-	words := strings.Fields(sentence)
-	acronym := CreateAcronym(words)
-	noisyAcronym, err := addNoise(acronym, noiseLevel)
+   words := strings.Fields(sentence)
+   acronym := CreateAcronym(words)
+   noisyAcronym, err := addNoise(acronym, noiseLevel)
 
-	return strings.Join(noisyAcronym, ""), nil
+   return strings.Join(noisyAcronym, ""), nil
 }
 ```
 

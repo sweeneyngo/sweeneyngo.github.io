@@ -130,9 +130,10 @@ h3 {
 
 p {
   margin-bottom: 1rem;
-  line-height: 1.525;
+  line-height: 1.625;
   letter-spacing: -0.05em;
   font-size: 1.1rem;
+  word-spacing: 0.05em;
 }
 
 small {

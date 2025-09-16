@@ -19,17 +19,14 @@ export default async function Home() {
       </header>
       <section className={styles.content}>
         <p className={styles.subtitle}>
-          Hello! I&apos;m ifu (see:{' '}
+          Hello! I&apos;m ifu! (
           <Link className={styles.link} href="/aliases">
-            aliases
+            ?
           </Link>
-          ). <br />
-          <b>I create things on the web</b>, explore{' '}
-          <b>interactive interfaces</b>, and <b>architect systems</b>. Building
-          products in healthcare and education, from early-stage startups,
-          non-profits, et cetera. I write about programming, software
-          development, art, music, and digital independence<sup>†</sup>.
-          Enjoying the pursuit of blogging as an exercise of a{' '}
+          ) <br />I create things on the web, explore interfaces, and experiment
+          with systems. I like to write about my experiences in art, music,
+          software, and digital independence<sup>†</sup>. Enjoying the pursuit
+          of blogging as an exercise of a{' '}
           <a href="https://www.asc.ohio-state.edu/kilcup.1/262/feynman.html">
             Feynmanian approach
           </a>{' '}
@@ -56,18 +53,17 @@ export default async function Home() {
         </div>
 
         <p className={styles.description}>
-          In previous lives, I went to the University of California, Los Angeles
-          (UCLA) where I majored in Computer Science and a minor in
-          Bioinformatics. My favorite courses were CS181&apos;s Automata,
-          CS161&apos;s Fundamentals of AI, and CM122&apos;s Algorithms in
-          Bioinformatics. <br />
+          I attended university in Los Angeles, and now working as a software
+          engineer for early-stage startups in SF. Before that, I ran a channel
+          creating silly covers with vocal synths. Often times, you&apos;ll find
+          me digging around for old technology, hacking every aspect of my life,
+          and occassionally dabbling in art and music.
           <br />
-          If you&apos;d like to learn more about me, you can find me on{' '}
-          <a href="https://twitter.com/ifui0">Twitter</a>,{' '}
-          <a href="https://github.com/sweeneyngo">Github</a>, or{' '}
-          <a href="https://linkedin.com/in/sweeneyngo">LinkedIn</a>. <br />
-          To see what I&apos;ve been working on, check out my{' '}
-          <a href="https://read.cv/ifuxyl">CV</a>!
+          <br />
+          If you&apos;d like to learn more about me, you can see what I built on{' '}
+          <a href="https://github.com/sweeneyngo">GitHub</a>. Otherwise, feel
+          free to check out the articles below.
+          <br />
         </p>
 
         <div className={styles.smallHeading}>

@@ -37,12 +37,12 @@ Besides the introduction, the crux of this article will focus on Bill Gosper's [
 
 # What is HashLife?
 
-**Simply put, it is a memoization algorithm to compute long-term fate of a configuration.**
+**Simply put, it is a memoization algorithm to compute the long-term fate of a configuration.**
 For instance, you can quite easily generate a 6,366,548,773,467,669,985,195,496,000 (6 [octillionth](https://en.wikipedia.org/wiki/Names_of_large_numbers 'Names of large numbers')) generation of a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine 'Turing machine') in [Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life "Conway's Game of Life").
 
 If I were to give it a more descriptive title, one that explains exactly what it accomplishes, it would be: ["Exploiting Regularities in Large Cellular Spaces"](https://usr.lmf.cnrs.fr/~jcf/m1/gol/gosper-84.pdf).
 
-In all walks of life, redundancy is everywhere. Whether you wake up in the morning to brush your teeth, or meeting up with the same clique of friends, or even communing to work, we carry ourselves through the "ordinary". Our brains can even remember when we've done something again, such as when we encounter a hard math question that we've studied the night before, or learning a new language, and we can use our memory to guide us towards the answer.
+In all walks of life, redundancy is everywhere. Whether you wake up in the morning to brush your teeth, or meeting up with the same clique of friends, or even commuting to work, we carry ourselves through the "ordinary". Our brains can even remember when we've done something again, such as when we encounter a hard math question that we've studied the night before, or learning a new language, and we can use our memory to guide us towards the answer.
 
 Through redundancy, we can achieve memory, and through memory, we can arrive at the solution with less time & resources from the first time we've attempted it.
 
@@ -89,12 +89,12 @@ We can visualize this example through this:
 
 ![Quadtree of a 16x16 grid](https://www.dev-mind.blog/wp-content/uploads/2020/05/quadtree1-1024x839.png)
 
-In quadtrees, graphs/grids are referred to as nodes. Treat every node as it's own "configuration grid". Notice how each node holds a portion of the configuration of its parent node. Each level of the graph decreases by one as you move down the graph:
+In quadtrees, graphs/grids are referred to as nodes. Treat every node as its own "configuration grid". Notice how each node holds a portion of the configuration of its parent node. Each level of the graph decreases by one as you move down the graph:
 
 - For example, a level 1 node is a 2x2 grid.
 - For example, a level 2 node is a 4x4 grid.
 - For example, a level 3 node is a 8x8 grid.
-- Notice that each new level can fit four nodes of the previous level. A level 2 node's 4x4 grid can hold exactly four 2x2 grids, or exactly four level 1 node.
+- Notice that each new level can fit four nodes of the previous level. A level 2 node's 4x4 grid can hold exactly four 2x2 grids, or exactly four level 1 nodes.
 - At level 0, it contains the exact pixel, or 1x1 grid.
 
 ## Optimizations
@@ -109,7 +109,7 @@ We'll start by stating some observations from building out the exhaustive versio
 - Formulating this, the number of nodes is 2^(2^k \* 2^k), where k is the level.
 - Obviously, the number of configurations skyrockets as we move up the graph, but it is important to understand how small & feasible the lower levels are. In fact, we can consider them as "building blocks", or more formally "cardinal nodes".
 
-**2. The number of specific grids occuring is much lower.**
+**2. The number of specific grids occurring is much lower.**
 This is true, and we should NOT exhaust all possible grids. Therefore, we can treat the above optimization as a hard limit.
 
 **3. To maximize sharing a common grid, only create one instance of that grid in our quadtree.**
@@ -117,7 +117,7 @@ As you may observe from the image, there are 3 out of the 4 quadrants of the 8x8
 
 For the application, we can use hashing to map any grid to an existing grid on the quadtree, avoiding creating duplicates.
 
-Below, each level may have subgrids that are already memorized by the previous level. For instance, the level 3 node has **three** subgrids that match the left level 2 node, and **one** subgrid that match the right level 2 node. This is our ideal quadtree-- **tightly compressed**!
+Below, each level may have subgrids that are already memorized by the previous level. For instance, the level 3 node has **three** subgrids that match the left level 2 node, and **one** subgrid that matches the right level 2 node. This is our ideal quadtree-- **tightly compressed**!
 
 ![Same original 8x8 grid, but as compressed quadtree.](https://www.dev-mind.blog/wp-content/uploads/2020/05/quadtree2-975x1024.png)
 
@@ -131,7 +131,7 @@ At each generation, use the neighbors of a cell to compute the next state.
 
 It's O(kn), where n is the number of cells. Therefore, as we increase the number of cells, the algorithm will have to update every cell by a constant factor k. So, for sextillion cells, we'd have to make multiple sextillion updates!
 
-Moreover, the representation of our grid is, well a grid! While it is the most intuitive way to represent our problem, there is no room to compress it, **especially** when we're encountering repetition that our grid just doesn't account for. Instead, we want to abuse pointers & caching in our representation, leading to the "quadtree".
+Moreover, the representation of our grid is, well, a grid! While it is the most intuitive way to represent our problem, there is no room to compress it, **especially** when we're encountering repetition that our grid just doesn't account for. Instead, we want to abuse pointers & caching in our representation, leading to the "quadtree".
 
 _Aside: Why representation is important_:
 
@@ -152,52 +152,52 @@ With this representation, each of the four quadrants represents (nw, ne, sw, se)
 ```typescript
 class Node {
 
-    /*
-     * Four quadrants of a node.
-     *
-     *      nw, ne,
-     *      sw, se
-     *
-     * At level one, each quadrant is either (0, 1).
-     */
+   /*
+    * Four quadrants of a node.
+    *
+    *      nw, ne,
+    *      sw, se
+    *
+    * At level one, each quadrant is either (0, 1).
+    */
 
-    nw: Node | number;
-    ne: Node | number;
-    sw: Node | number;
-    se: Node | number;
+   nw: Node | number;
+   ne: Node | number;
+   sw: Node | number;
+   se: Node | number;
 
-    // Current level of the node in the quadtree.
-    level: number;
+   // Current level of the node in the quadtree.
+   level: number;
 
-    constructor(
-        nw: Node | number,
-        ne: Node | number,
-        sw: Node | number,
-        se: Node | number
-    ) {
-        this.nw = nw;
-        this.ne = ne;
-        this.sw = sw;
-        this.se = se;
+   constructor(
+       nw: Node | number,
+       ne: Node | number,
+       sw: Node | number,
+       se: Node | number
+   ) {
+       this.nw = nw;
+       this.ne = ne;
+       this.sw = sw;
+       this.se = se;
 
-        this.level = 0;
+       this.level = 0;
 
-        if (typeof nw === "number" &&
-            typeof ne === "number" &&
-            typeof sw === "number" &&
-            typeof se === "number"
-        ) {
-            this.level = 1; // 2x2
-        }
-        else if (
-            nw instanceof Node &&
-            ne instanceof Node &&
-            sw instanceof Node &&
-            se instanceof Node
-        ) {
-            this.level = nw.level + 1;
-        }
-    }
+       if (typeof nw === "number" &&
+           typeof ne === "number" &&
+           typeof sw === "number" &&
+           typeof se === "number"
+       ) {
+           this.level = 1; // 2x2
+       }
+       else if (
+           nw instanceof Node &&
+           ne instanceof Node &&
+           sw instanceof Node &&
+           se instanceof Node
+       ) {
+           this.level = nw.level + 1;
+       }
+   }
 ```
 
 You'll notice that if the quadrants are at level one, they'll be a 1x1 grid of either 0 or 1, so we can represent them as a number rather than an entire Node. This distinction is useful to label each level, which you can see in our constructor.
@@ -216,30 +216,30 @@ Since we will **already know all the possible updates** of 16 2x2 blocks, we can
 
 ```javascript
 function evolveNode(node) {
-  if (node.level < 2) throw new Error('Current level cannot be less than 2.');
-  if (
-    !(
-      this.nw instanceof Node &&
-      this.ne instanceof Node &&
-      this.sw instanceof Node &&
-      this.se instanceof Node
-    )
-  )
-    throw new Error('Current node cannot be at depth 1.');
+ if (node.level < 2) throw new Error('Current level cannot be less than 2.');
+ if (
+   !(
+     this.nw instanceof Node &&
+     this.ne instanceof Node &&
+     this.sw instanceof Node &&
+     this.se instanceof Node
+   )
+ )
+   throw new Error('Current node cannot be at depth 1.');
 
-  let resultNode;
-  if (node.level === 2) {
-    // Evolve via simple implementation.
-  } else {
-    resultNode = constructNode(
-      evolveNode(node.nw),
-      evolveNode(node.ne),
-      evolveNode(node.sw),
-      evolveNode(node.se),
-    );
-  }
+ let resultNode;
+ if (node.level === 2) {
+   // Evolve via simple implementation.
+ } else {
+   resultNode = constructNode(
+     evolveNode(node.nw),
+     evolveNode(node.ne),
+     evolveNode(node.sw),
+     evolveNode(node.se),
+   );
+ }
 
-  return resultNode;
+ return resultNode;
 }
 ```
 
@@ -273,212 +273,212 @@ When we recurse, each subgrid will calculate its own center grid, which we can s
 
 We haven't considered the edges of the center grid, because we simply don't need to! Consider a fixed grid for Conway's Game of Life. On the edges of the grid, these cells cannot be determined, since they lack all eight neighbors to determine whether they can live or not.
 
-To put it more rigorously, we CANNOT determine the result of the edges of the grid without the information found outside of the given grid. Since we are strictly working independently with our grid, we focus on determining the center grid, as we can guarentee the correct result.
+To put it more rigorously, we CANNOT determine the result of the edges of the grid without the information found outside of the given grid. Since we are strictly working independently with our grid, we focus on determining the center grid, as we can guarantee the correct result.
 
-When implementing, it's crucial the quadtree accomodates for the entire configuration. If the root node has edge cells that are active, then the tree is not sufficiantly large enough and must expand to accomodate for those cells.
+When implementing, it's crucial the quadtree accommodates for the entire configuration. If the root node has edge cells that are active, then the tree is not sufficiently large enough and must expand to accommodate for those cells.
 
 However, notice how we can't construct the blue center grid with the green center grids because they're not completely aligned. Only a quarter of each green center grid fits in the center blue square. We're only capturing the corners of the blue center grid.
 
-Looking closer, it may be feasible to construct the blue square if we found multiple green center grids that outline the perimeter of the blue square. This observation paves the way for the "nine auxillary squares" strategy.
+Looking closer, it may be feasible to construct the blue square if we found multiple green center grids that outline the perimeter of the blue square. This observation paves the way for the "nine auxiliary squares" strategy.
 
-### Nine auxillary squares
+### Nine auxiliary squares
 
-![Nine auxillary squares](https://www.dev-mind.blog/wp-content/uploads/2020/05/center_comput.png)
+![Nine auxiliary squares](https://www.dev-mind.blog/wp-content/uploads/2020/05/center_comput.png)
 
 ```javascript
 // Second version.
 function evolveNode(node) {
-  if (node.level < 2) throw new Error('Current level cannot be less than 2.');
-  if (
-    !(
-      this.nw instanceof Node &&
-      this.ne instanceof Node &&
-      this.sw instanceof Node &&
-      this.se instanceof Node
-    )
-  )
-    throw new Error('Current node cannot be at depth 1.');
+ if (node.level < 2) throw new Error('Current level cannot be less than 2.');
+ if (
+   !(
+     this.nw instanceof Node &&
+     this.ne instanceof Node &&
+     this.sw instanceof Node &&
+     this.se instanceof Node
+   )
+ )
+   throw new Error('Current node cannot be at depth 1.');
 
-  let resultCenterNode;
-  if (node.level === 2) {
-    // Evolve via simple implementation.
-  } else {
-    const n00 = node.nw.centerNode();
-    const n01 = node.nw.centerHorizontalNode((east = this.ne));
-    const n02 = node.ne.centerNode();
-    const n10 = node.nw.centerVerticalNode((south = this.sw));
-    const n11 = node.centerNodeNode();
-    const n12 = node.ne.centerVerticalNode((south = this.se));
-    const n20 = node.sw.centerNode();
-    const n21 = node.sw.centerHorizontalNode((east = this.se));
-    const n22 = node.se.centerNode();
+ let resultCenterNode;
+ if (node.level === 2) {
+   // Evolve via simple implementation.
+ } else {
+   const n00 = node.nw.centerNode();
+   const n01 = node.nw.centerHorizontalNode((east = this.ne));
+   const n02 = node.ne.centerNode();
+   const n10 = node.nw.centerVerticalNode((south = this.sw));
+   const n11 = node.centerNodeNode();
+   const n12 = node.ne.centerVerticalNode((south = this.se));
+   const n20 = node.sw.centerNode();
+   const n21 = node.sw.centerHorizontalNode((east = this.se));
+   const n22 = node.se.centerNode();
 
-    resultCenterNode = assembleNineNode(
-      evolveNode(n00),
-      evolveNode(n01),
-      evolveNode(n02),
-      evolveNode(n10),
-      evolveNode(n11),
-      evolveNode(n12),
-      evolveNode(n20),
-      evolveNode(n21),
-      evolveNode(n22),
-    );
-  }
+   resultCenterNode = assembleNineNode(
+     evolveNode(n00),
+     evolveNode(n01),
+     evolveNode(n02),
+     evolveNode(n10),
+     evolveNode(n11),
+     evolveNode(n12),
+     evolveNode(n20),
+     evolveNode(n21),
+     evolveNode(n22),
+   );
+ }
 
-  return resultCenterNode;
+ return resultCenterNode;
 }
 
 function centerNode() {
-  return this.constructor.constructNode(
-    this.nw.se,
-    this.ne.sw,
-    this.sw.ne,
-    this.se.nw,
-  );
+ return this.constructor.constructNode(
+   this.nw.se,
+   this.ne.sw,
+   this.sw.ne,
+   this.se.nw,
+ );
 }
 
 function centerHorizontalNode(east) {
-  // Requires two nodes, the west ("this") & the east ("east").
-  return this.constructor.constructNode(
-    this.ne.se,
-    east.nw.sw,
-    this.se.ne,
-    east.sw.nw,
-  );
+ // Requires two nodes, the west ("this") & the east ("east").
+ return this.constructor.constructNode(
+   this.ne.se,
+   east.nw.sw,
+   this.se.ne,
+   east.sw.nw,
+ );
 }
 
 function centerVerticalNode(south) {
-  // Requires two nodes, the north ("this") & the south ("south").
-  return this.constructor.constructNode(
-    this.sw.se,
-    this.se.sw,
-    south.nw.ne,
-    south.ne.nw,
-  );
+ // Requires two nodes, the north ("this") & the south ("south").
+ return this.constructor.constructNode(
+   this.sw.se,
+   this.se.sw,
+   south.nw.ne,
+   south.ne.nw,
+ );
 }
 
 function centerCenterNode() {
-  // Like center node, but one more iteration.
-  return this.constructor.constructNode(
-    this.nw.se.se,
-    this.ne.sw.sw,
-    this.sw.ne.ne,
-    this.se.nw.nw,
-  );
+ // Like the center node, but one more iteration.
+ return this.constructor.constructNode(
+   this.nw.se.se,
+   this.ne.sw.sw,
+   this.sw.ne.ne,
+   this.se.nw.nw,
+ );
 }
 ```
 
-A complication with this approach is that we'd have to create an entirely new function just to break apart these nine auxillary squares and get the portion we need to assemble the blue center square.
+A complication with this approach is that we'd have to create an entirely new function just to break apart these nine auxiliary squares and get the portion we need to assemble the blue center square.
 
-When constructing the original node, we can avoid breaking down the subgrids of each nine grids, and instead creating each of the four center quadrant grid of the blue grid.
+When constructing the original node, we can avoid breaking down the subgrids of each nine grids, and instead create each of the four center quadrant grids of the blue grid.
 
-Since the center blue grid has four quadrants, we can take the four surrounding auxillary grids for each quadrant, use our construct function to create our center grid, and then combine all these four quadrants together to form the final blue grid. Isn't that neat!
+Since the center blue grid has four quadrants, we can take the four surrounding auxiliary grids for each quadrant, use our construct function to create our center grid, and then combine all these four quadrants together to form the final blue grid. Isn't that neat!
 
 ```javascript
 // Third version.
 function evolveNode(node) {
-  if (node.level < 2) throw new Error('Current level cannot be less than 2.');
-  if (
-    !(
-      this.nw instanceof Node &&
-      this.ne instanceof Node &&
-      this.sw instanceof Node &&
-      this.se instanceof Node
-    )
-  )
-    throw new Error('Current node cannot be at depth 1.');
+ if (node.level < 2) throw new Error('Current level cannot be less than 2.');
+ if (
+   !(
+     this.nw instanceof Node &&
+     this.ne instanceof Node &&
+     this.sw instanceof Node &&
+     this.se instanceof Node
+   )
+ )
+   throw new Error('Current node cannot be at depth 1.');
 
-  let resultCenterNode;
-  if (node.level === 2) {
-    // Evolve via simple implementation.
-  } else {
-    const n00 = node.nw.centerNode();
-    const n01 = node.nw.centerHorizontalNode((east = this.ne));
-    const n02 = node.ne.centerNode();
-    const n10 = node.nw.centerVerticalNode((south = this.sw));
-    const n11 = node.centerNodeNode();
-    const n12 = node.ne.centerVerticalNode((south = this.se));
-    const n20 = node.sw.centerNode();
-    const n21 = node.sw.centerHorizontalNode((east = this.se));
-    const n22 = node.se.centerNode();
+ let resultCenterNode;
+ if (node.level === 2) {
+   // Evolve via simple implementation.
+ } else {
+   const n00 = node.nw.centerNode();
+   const n01 = node.nw.centerHorizontalNode((east = this.ne));
+   const n02 = node.ne.centerNode();
+   const n10 = node.nw.centerVerticalNode((south = this.sw));
+   const n11 = node.centerNodeNode();
+   const n12 = node.ne.centerVerticalNode((south = this.se));
+   const n20 = node.sw.centerNode();
+   const n21 = node.sw.centerHorizontalNode((east = this.se));
+   const n22 = node.se.centerNode();
 
-    const center_nw = constructNode(
-      evolveNode(n00),
-      evolveNode(n01),
-      evolveNode(n10),
-      evolveNode(n11),
-    );
+   const center_nw = constructNode(
+     evolveNode(n00),
+     evolveNode(n01),
+     evolveNode(n10),
+     evolveNode(n11),
+   );
 
-    const center_ne = constructNode(
-      evolveNode(n01),
-      evolveNode(n02),
-      evolveNode(n11),
-      evolveNode(n12),
-    );
+   const center_ne = constructNode(
+     evolveNode(n01),
+     evolveNode(n02),
+     evolveNode(n11),
+     evolveNode(n12),
+   );
 
-    const center_sw = constructNode(
-      evolveNode(n10),
-      evolveNode(n11),
-      evolveNode(n20),
-      evolveNode(n21),
-    );
+   const center_sw = constructNode(
+     evolveNode(n10),
+     evolveNode(n11),
+     evolveNode(n20),
+     evolveNode(n21),
+   );
 
-    const center_se = constructNode(
-      evolveNode(n11),
-      evolveNode(n12),
-      evolveNode(n21),
-      evolveNode(n22),
-    );
+   const center_se = constructNode(
+     evolveNode(n11),
+     evolveNode(n12),
+     evolveNode(n21),
+     evolveNode(n22),
+   );
 
-    resultCenterNode = constructNode(
-      center_nw.centerNode(),
-      center_ne.centerNode(),
-      center_sw.centerNode(),
-      center_se.centerNode(),
-    );
-  }
+   resultCenterNode = constructNode(
+     center_nw.centerNode(),
+     center_ne.centerNode(),
+     center_sw.centerNode(),
+     center_se.centerNode(),
+   );
+ }
 
-  return resultCenterNode;
+ return resultCenterNode;
 }
 
 function centerNode() {
-  return this.constructor.constructNode(
-    this.nw.se,
-    this.ne.sw,
-    this.sw.ne,
-    this.se.nw,
-  );
+ return this.constructor.constructNode(
+   this.nw.se,
+   this.ne.sw,
+   this.sw.ne,
+   this.se.nw,
+ );
 }
 
 function centerHorizontalNode(east) {
-  // Requires two nodes, the west ("this") & the east ("east").
-  return this.constructor.constructNode(
-    this.ne.se,
-    east.nw.sw,
-    this.se.ne,
-    east.sw.nw,
-  );
+ // Requires two nodes, the west ("this") & the east ("east").
+ return this.constructor.constructNode(
+   this.ne.se,
+   east.nw.sw,
+   this.se.ne,
+   east.sw.nw,
+ );
 }
 
 function centerVerticalNode(south) {
-  // Requires two nodes, the north ("this") & the south ("south").
-  return this.constructor.constructNode(
-    this.sw.se,
-    this.se.sw,
-    south.nw.ne,
-    south.ne.nw,
-  );
+ // Requires two nodes, the north ("this") & the south ("south").
+ return this.constructor.constructNode(
+   this.sw.se,
+   this.se.sw,
+   south.nw.ne,
+   south.ne.nw,
+ );
 }
 
 function centerCenterNode() {
-  // Like center node, but one more iteration.
-  return this.constructor.constructNode(
-    this.nw.se.se,
-    this.ne.sw.sw,
-    this.sw.ne.ne,
-    this.se.nw.nw,
-  );
+ // Like the center node, but one more iteration.
+ return this.constructor.constructNode(
+   this.nw.se.se,
+   this.ne.sw.sw,
+   this.sw.ne.ne,
+   this.se.nw.nw,
+ );
 }
 ```
 
@@ -493,12 +493,12 @@ To visualize the significance of this, imagine our pattern evolves in a circular
 ```javascript
 // A simple demonstration.
 const cache = {
-  // [grid]: centerGrid, or more specifically:
-  // [node]: evolve(node)
+ // [grid]: centerGrid, or more specifically:
+ // [node]: evolve(node)
 };
 ```
 
-However, hash tables cannot "hash" a node, since it only hash primitives (int, float, etc.) + strings.
+However, hash tables cannot "hash" a node, since it only has primitives (int, float, etc.) + strings.
 Therefore, we need to convert a grid to a "hash", and ensure that it is unique to that grid.
 
 The simplest approach is to use the pointer address, since our quadtree only has **one** instance of each grid, so all pointers pointing to it will have the exact same address. But, since the center nodes were originally mis-aligned with the original center node, they will result in different patterns, and thus different hashes. To alleviate this, we can make our hash a **combination** of the subnodes.
@@ -515,124 +515,124 @@ But at the same time, we're using memoization, so we're caching significantly mo
 For a 8x8 node, we evolve nine 4x4 nodes, then evolve those. Two evolutions.
 For a 16x16 node, we evolve nine 8x8 nodes, then evolve those. Since we established that the 8x8 nodes will have two evolutions, then we'll essentially achieve four evolutions.
 
-In summary, at each higher depth, we **double** the evolutions, all of which is cached immediately!
+In summary, at each higher depth, we **double** the evolutions, all of which are cached immediately!
 
 ```javascript
 // Fourth version.
 function evolveNode(node) {
-  if (node.level < 2) throw new Error('Current level cannot be less than 2.');
-  if (
-    !(
-      this.nw instanceof Node &&
-      this.ne instanceof Node &&
-      this.sw instanceof Node &&
-      this.se instanceof Node
-    )
-  )
-    throw new Error('Current node cannot be at depth 1.');
+ if (node.level < 2) throw new Error('Current level cannot be less than 2.');
+ if (
+   !(
+     this.nw instanceof Node &&
+     this.ne instanceof Node &&
+     this.sw instanceof Node &&
+     this.se instanceof Node
+   )
+ )
+   throw new Error('Current node cannot be at depth 1.');
 
-  let resultCenterNode;
-  if (node.level === 2) {
-    // Evolve via simple implementation.
-  } else {
-    const n00 = node.nw.centerNode();
-    const n01 = node.nw.centerHorizontalNode((east = this.ne));
-    const n02 = node.ne.centerNode();
-    const n10 = node.nw.centerVerticalNode((south = this.sw));
-    const n11 = node.centerNodeNode();
-    const n12 = node.ne.centerVerticalNode((south = this.se));
-    const n20 = node.sw.centerNode();
-    const n21 = node.sw.centerHorizontalNode((east = this.se));
-    const n22 = node.se.centerNode();
+ let resultCenterNode;
+ if (node.level === 2) {
+   // Evolve via simple implementation.
+ } else {
+   const n00 = node.nw.centerNode();
+   const n01 = node.nw.centerHorizontalNode((east = this.ne));
+   const n02 = node.ne.centerNode();
+   const n10 = node.nw.centerVerticalNode((south = this.sw));
+   const n11 = node.centerNodeNode();
+   const n12 = node.ne.centerVerticalNode((south = this.se));
+   const n20 = node.sw.centerNode();
+   const n21 = node.sw.centerHorizontalNode((east = this.se));
+   const n22 = node.se.centerNode();
 
-    const center_nw = constructNode(
-      evolveNode(n00),
-      evolveNode(n01),
-      evolveNode(n10),
-      evolveNode(n11),
-    );
+   const center_nw = constructNode(
+     evolveNode(n00),
+     evolveNode(n01),
+     evolveNode(n10),
+     evolveNode(n11),
+   );
 
-    const center_ne = constructNode(
-      evolveNode(n01),
-      evolveNode(n02),
-      evolveNode(n11),
-      evolveNode(n12),
-    );
+   const center_ne = constructNode(
+     evolveNode(n01),
+     evolveNode(n02),
+     evolveNode(n11),
+     evolveNode(n12),
+   );
 
-    const center_sw = constructNode(
-      evolveNode(n10),
-      evolveNode(n11),
-      evolveNode(n20),
-      evolveNode(n21),
-    );
+   const center_sw = constructNode(
+     evolveNode(n10),
+     evolveNode(n11),
+     evolveNode(n20),
+     evolveNode(n21),
+   );
 
-    const center_se = constructNode(
-      evolveNode(n11),
-      evolveNode(n12),
-      evolveNode(n21),
-      evolveNode(n22),
-    );
+   const center_se = constructNode(
+     evolveNode(n11),
+     evolveNode(n12),
+     evolveNode(n21),
+     evolveNode(n22),
+   );
 
-    resultCenterNode = constructNode(
-      evolveNode(center_nw),
-      evolveNode(center_ne),
-      evolveNode(center_sw),
-      evolveNode(center_se),
-    );
-  }
+   resultCenterNode = constructNode(
+     evolveNode(center_nw),
+     evolveNode(center_ne),
+     evolveNode(center_sw),
+     evolveNode(center_se),
+   );
+ }
 
-  return resultCenterNode;
+ return resultCenterNode;
 }
 
 function centerNode() {
-  return this.constructor.constructNode(
-    this.nw.se,
-    this.ne.sw,
-    this.sw.ne,
-    this.se.nw,
-  );
+ return this.constructor.constructNode(
+   this.nw.se,
+   this.ne.sw,
+   this.sw.ne,
+   this.se.nw,
+ );
 }
 
 function centerHorizontalNode(east) {
-  // Requires two nodes, the west ("this") & the east ("east").
-  return this.constructor.constructNode(
-    this.ne.se,
-    east.nw.sw,
-    this.se.ne,
-    east.sw.nw,
-  );
+ // Requires two nodes, the west ("this") & the east ("east").
+ return this.constructor.constructNode(
+   this.ne.se,
+   east.nw.sw,
+   this.se.ne,
+   east.sw.nw,
+ );
 }
 
 function centerVerticalNode(south) {
-  // Requires two nodes, the north ("this") & the south ("south").
-  return this.constructor.constructNode(
-    this.sw.se,
-    this.se.sw,
-    south.nw.ne,
-    south.ne.nw,
-  );
+ // Requires two nodes, the north ("this") & the south ("south").
+ return this.constructor.constructNode(
+   this.sw.se,
+   this.se.sw,
+   south.nw.ne,
+   south.ne.nw,
+ );
 }
 
 function centerCenterNode() {
-  // Like center node, but one more iteration.
-  return this.constructor.constructNode(
-    this.nw.se.se,
-    this.ne.sw.sw,
-    this.sw.ne.ne,
-    this.se.nw.nw,
-  );
+ // Like the center node, but one more iteration.
+ return this.constructor.constructNode(
+   this.nw.se.se,
+   this.ne.sw.sw,
+   this.sw.ne.ne,
+   this.se.nw.nw,
+ );
 }
 ```
 
 ## The Beauty of Hashlife
 
-Despite how difficult the algorithm may pose to be at first, especially when arriving at these properties unique to the Game of Life, one may ponder at just how simple & elegant the final solution is.
+Despite how difficult the algorithm may pose at first, especially when arriving at these properties unique to the Game of Life, one may ponder at just how simple & elegant the final solution is.
 
-It's a testament to the simplicity of recursion-- iterating over itself through smaller and smaller subtasks until we arrive at a solution. By allowing our algorithm to divide the work to smaller pieces, we can repeat repetitive work (such as applying the Conway's rules) to multiple smaller subgrids, re-assembling it to the original grid.
+It's a testament to the simplicity of recursion-- iterating over itself through smaller and smaller subtasks until we arrive at a solution. By allowing our algorithm to divide the work to smaller pieces, we can repeat repetitive work (such as applying Conway's rules) to multiple smaller subgrids, re-assembling it to the original grid.
 
 Moreover, it's astonishing how by just adding one more `evolveNode()` to our recursive function, we can dramatically increase the rate of iterations, which is only beneficial since we cache everything into memory.
 
-It's like trying to build a gigantic Lego set from the ground-up, focusing on the fundamental pieces we know and love, and tackling a large feat through this foundation. HashLife is a brilliant takeaway to how we achieve success through formidable tasks by breaking down such tasks to more managable pieces.
+It's like trying to build a gigantic Lego set from the ground-up, focusing on the fundamental pieces we know and love, and tackling a large feat through this foundation. HashLife is a brilliant takeaway to how we achieve success through formidable tasks by breaking down such tasks to more manageable pieces.
 
 There are so many implementation details we haven't discussed:
 

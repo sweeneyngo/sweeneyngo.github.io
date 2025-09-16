@@ -9,19 +9,37 @@ export default async function Blog() {
         <h2>For developers,</h2>
         <p>
           Q. What do you mainly work with? <br />
-          A. TypeScript, React, Next.js, Vite. <br />
+          A. TypeScript + Go! (in a perfect world, I would work with these two
+          languages forever) <br />
         </p>
         <p>
           Q. Anything you&apos;re curious about? <br />
-          A. Learning Go, building graphics in C++, and trying out Rust. <br />
+          A. Building things I don&apos;t really understand. So, like graphics,
+          networking, game theory, command-line interfaces, compilers.. hmm, I
+          guess there&apos;s a lot more to learn! <br />
         </p>
         <p>
-          Q. What IDE should I use? <br />
-          A. Whatever works for you. People can say use VSCode, or IntelliJ, or
-          even Neovim, but it highly depends on your preference & project. I
-          often use VSCode because it&apos;s built for web applications & high
-          customizability, but neovim is great for quick editing, and IntelliJ
-          was more appropriate for building Java.
+          Q. What IDE do you use? <br />
+          A. I use VSCode because that&apos;s what I&apos;m used to. I did
+          experiment with neovim and Emacs but they never really clicked with me
+          yet. I do enjoy vim keybinds though. I&apos;m always under the
+          impression that IDEs are less about personal preference and more about
+          the right tool for the job, but that might be a conversation for
+          another day.
+          <br />
+        </p>
+        <p>
+          Q. What drives you to build? What are you thinking of building next?{' '}
+          <br />
+          A. I think it mainly stems from curiosity. So if I ever see a cool
+          article or a concept I don&apos;t quite understand, I try to apply
+          that knowledge somehow. Honestly, I try to de-scope my projects down
+          to a simple prototype. I feel like if it ends up suffering from
+          feature creep, it becomes far too unwieldy and I ultimately lose the
+          point of building it in the first place. I can&apos;t say what I would
+          do next (not keen on describing short-term plans), but I generally try
+          to build things that will help me learn a new concept or domain, while
+          also generally being fun and interactive.
           <br />
         </p>
         <h2>For artists,</h2>
@@ -45,8 +63,9 @@ export default async function Blog() {
         <h2>For the strange techie,</h2>
         <p>
           Q. Recommended software? <br />
-          A. Quite a bit: VSCode, Firefox, Obsidian, Syncthing, foobar2000.{' '}
-          <br />
+          A. Quite a bit: Samba, VLC, Obsidian, Syncthing, foobar2000. But
+          honestly, there&apos;s a vast world of software if you start
+          self-hosting! <br />
         </p>
       </div>
     </div>

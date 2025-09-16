@@ -4,7 +4,7 @@
         <title>ifu's Blog</title>
         <link>https://ifuxyl.dev</link>
         <description>Homebase [to] -- serving articles &amp; blogs, for ifu.</description>
-        <lastBuildDate>Sun, 29 Dec 2024 23:46:52 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 16 Sep 2025 09:24:54 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <language>en</language>
@@ -13,7 +13,7 @@
             <url>https://ifuxyl.dev/favicon.png</url>
             <link>https://ifuxyl.dev</link>
         </image>
-        <copyright>All rights reserved 2024, ifu</copyright>
+        <copyright>All rights reserved 2025, ifu</copyright>
         <item>
             <title><![CDATA[Conquer Sudoku; Run the Machine]]></title>
             <link>https://ifuxyl.dev/blog/solving-sudoku</link>
@@ -25,7 +25,7 @@ I've been thinking about puzzles lately.
 
 Maybe it's because I grew up solving puzzles from the [Professor Layton series](https://www.laytonseries.com/naen/) and became quite good at it. I still fondly remember one of my most favorite puzzle from the series, CV#128 or [Number Lock](https://layton.fandom.com/wiki/Puzzle:Number_Lock). Growing up, I remember dreading this kind of puzzle, one that would take multiple sessions of brute forcing various solutions, trying different combinations, and inching just a little bit closer to the final solution. Puzzles can immerse you in an entire world of dread, excitement, stress, and sheer will.
 
-More recently, I've been playing a fun, quirky game called [Baba is You](https://store.steampowered.com/app/736260/Baba_Is_You/) which revitalized the retro charm of solving small puzzles with a creative twist. It's a big step up from the previously mentioned entry in my life, since this game is much, **much** more challenging in every way. To say it introduces you to its world is an understatement. I had myself completely envelopped in every property, learning the hidden interactions & taking notes whenever I can to get closer to solving the most ridiculous puzzles Arvi throws at me. I have yet to reach the Endgame, but Solitary Island's [Prison](https://babaiswiki.fandom.com/wiki/Prison) & Deep Forest's [Insulation](https://babaiswiki.fandom.com/wiki/Insulation) was unbelievably hellish. It's the best puzzle game I've had the pleasure to experience.
+More recently, I've been playing a fun, quirky game called [Baba is You](https://store.steampowered.com/app/736260/Baba_Is_You/) which revitalized the retro charm of solving small puzzles with a creative twist. It's a big step up from the previously mentioned entry in my life, since this game is much, **much** more challenging in every way. To say it introduces you to its world is an understatement. I had myself completely envelopped in every property, learning the hidden interactions & taking notes whenever I could to get closer to solving the most ridiculous puzzles Arvi threw at me. I have yet to reach the Endgame, but Solitary Island's [Prison](https://babaiswiki.fandom.com/wiki/Prison) & Deep Forest's [Insulation](https://babaiswiki.fandom.com/wiki/Insulation) was unbelievably hellish. It's the best puzzle game I've had the pleasure to experience.
 
 In any case, I thought about what it'd be like to solve puzzles with the purpose of maximizing efficiency.
 
@@ -34,10 +34,10 @@ Play the robot, almost-- run the machine.
 We commonly use heuristics & "common sense" to arrive at our solutions, and puzzles are designed with this mindset. But do robots optimize based on these heuristics, and should they be held to those standards? I tackled this question through a simple puzzle of combinatorics, [Sudoku](https://en.wikipedia.org/wiki/Sudoku).
 
 # Su-su-do-do-ku-ku
-Did you know Sudoku was not originally from Japan? It actually was first designed as "Number Place" before becoming popular through Japan as Sudoku. The name Sudoku is a simplified version of the phrase "Sūji wa dokushin ni kagiru (数字は独身に限る)" which roughly translates to "Digits must be single". It's quite funny since the term "single" used here is generally used for "single relationships" or an unmarried person. Not many people know about this phrase, so I named my application after the very first word, [suji](hhttps://www.ifuxyl.dev/suji).
+
+Did you know Sudoku was not originally from Japan? It actually was first designed as "Number Place" before becoming popular throughout Japan as Sudoku. The name Sudoku is a simplified version of the phrase "Sūji wa dokushin ni kagiru (数字は独身に限る)" which roughly translates to "Digits must be single". It's quite funny since the term "single" used here is generally used for "single relationships" or an unmarried person. Not many people know about this phrase, so I named my application after the very first word, [suji](hhttps://www.ifuxyl.dev/suji).
 
 For my implementation, I've built a UI client application in Typescript + [React](https://react.dev/) and built with [Vite](https://vitejs.dev/). The simulation & execution of algorithms are all done with Typescript, since the 9x9 structure of Sudoku is a small enough size to not warrant a faster compiled language.
-
 
 You can try it out through [this link](https://www.ifuxyl.dev/suji)!
 
@@ -51,7 +51,7 @@ As I kept digging for published algorithms & well-known techniques in the Sudoku
 
 For instance, a popular pen-and-paper technique (["Crook's Algorithm"](https://www.ams.org/notices/200904/tx090400460p.pdf)) invented by J.F. Crook is entirely based on the naked singles/doubles that are initially taught to beginners.
 
-Unsurpringly, I learned a great deal of human-applicable techniques through building out these algorithms. It's wonderful to be able to solve Sudoku puzzles myself with this newfound knowledge, and I'm appreciative of the amazing Sudoku community who's kept this puzzle as relevant today.
+Unsurprisingly, I learned a great deal of human-applicable techniques through building out these algorithms. It's wonderful to be able to solve Sudoku puzzles myself with this newfound knowledge, and I'm appreciative of the amazing Sudoku community who's kept this puzzle as relevant today.
 
 When it comes to efficiency & performance, I was thinking at an angle of accurate measurements/specs but with most of the implementations done in TypeScript, I wasn't particularly using the appropriate tools to accurately measure the optimal performance of these algorithms. There are many existing papers (one such paper from [P. Berggren & D. Nilsson](https://www.csc.kth.se/utbildning/kandidatexjobb/datateknik/2012/rapport/berggren_patrik_OCH_nilsson_david_K12011.pdf) I highly reccomend!) on Sudoku who leveraged implementations written in C and C++, so I felt there was no reason to compete in that space.
 
@@ -59,7 +59,7 @@ With my experience in teaching others through code, I resonated more with creati
 
 - All solvers (algorithms) run at 100ms/step.
 
-At this time interval, the algorithm works slow enough for the average person to understand what is happening. We can see how the algorithm explores different options, evaluates paths, and test if it's any closer to an optimal solution. It's also slow enough for most users to differentiate this application from other variations, since this acts to simulate for the user's benefit, not the machine.
+At this time interval, the algorithm works slow enough for the average person to understand what is happening. We can see how the algorithm explores different options, evaluates paths, and tests if it's any closer to an optimal solution. It's also slow enough for most users to differentiate this application from other variations, since this acts to simulate for the user's benefit, not the machine.
 
 ## Time for Algorithms?
 
@@ -67,7 +67,7 @@ While I do believe I want to showcase all of the algorithms I implemented, that 
 
 Backtracking
 
-- A brute force algorithm (depth-first) that attempts every valid digit sequentially, and returning to previous cells if a solution can not be found. The simplest, yet effective method as all puzzles, regardless of difficulty, can be solved with this algorithm.
+- A brute force algorithm (depth-first) that attempts every valid digit sequentially, and returns to previous cells if a solution can not be found. The simplest, yet effective method as all puzzles, regardless of difficulty, can be solved with this algorithm.
 
 Backtracking (sorted)
 
@@ -83,11 +83,11 @@ Place-finding
 
 Crook's Algorithm
 
-- Crook's Algorithm (designed by J. F. Crook) is a more advanced Sudoku solving technique that is a variant of the Place-finding algorithm, but extends to "preemptive sets" (m>2). A preemptive set is a list of m numbers, together with a list of m cells, with the property that no numbers other than the m numbers from the list can occupy the m cells. This property is the basis for Naked Pairs, Triples, Quads, etc. The implementation focuses on reducing the candidates by the existing preemptive sets, then adopt the Place-finding strategy to isolate naked singles. Unlike the previous two, the Crook's algorithm can effectively solve every puzzle regardless of difficult, and is popularized as the "Pen-and-paper" approach.
+- Crook's Algorithm (designed by J. F. Crook) is a more advanced Sudoku solving technique that is a variant of the Place-finding algorithm, but extends to "preemptive sets" (m>2). A preemptive set is a list of m numbers, together with a list of m cells, with the property that no numbers other than the m numbers from the list can occupy the m cells. This property is the basis for Naked Pairs, Triples, Quads, etc. The implementation focuses on reducing the candidates by the existing preemptive sets, then adopt the Place-finding strategy to isolate naked singles. Unlike the previous two, Crook's algorithm can effectively solve every puzzle regardless of difficulty, and is popularized as the "Pen-and-paper" approach.
 
 Simulated Annealing
 
-- A probabilistic/stochastic algorithm (similar to Genetic algorithms) inspired by the physical process of annealing in metallurgy, where materials are heated and then slowly cooled to reach a stable state. In the context of solving Sudoku, this method is used to explore the solution space in a way that avoids getting stuck in local minima (suboptimal solutions). While known to be efficient, it can't compete with the previous deductive methods in Sudoku. Unlike the latter however, these type of algorithms aren't based on logic, giving them the potential to solve a wider range of problems. For this implementation, the initial temperature is dynamically determined from the board's state, and the cooling rate is optimized to 0.99.
+- A probabilistic/stochastic algorithm (similar to Genetic algorithms) inspired by the physical process of annealing in metallurgy, where materials are heated and then slowly cooled to reach a stable state. In the context of solving Sudoku, this method is used to explore the solution space in a way that avoids getting stuck in local minima (suboptimal solutions). While known to be efficient, it can't compete with the previous deductive methods in Sudoku. Unlike the latter however, these types of algorithms aren't based on logic, giving them the potential to solve a wider range of problems. For this implementation, the initial temperature is dynamically determined from the board's state, and the cooling rate is optimized to 0.99.
 
 Pattern Matching
 
@@ -95,7 +95,7 @@ Pattern Matching
 
 ## Navigation
 
-Most of my algorithms can be found in `utils/solver.ts`, where it's written in [Generator](https://www.typescriptlang.org/docs/handbook/iterators-and-generators.html) format, since I wanted to leverage the use of stepping through each algorithm for a friendlier learning experience. Some algorithms required a simple recursive step like the Backtracking variants, but others needed to apply probablistic steps or bitwise manipulation like Simulated Annealing and Pattern matching. Of course, if you'd simply like to experience it, you can select an algorithm from the menu.
+Most of my algorithms can be found in `utils/solver.ts`, where it's written in [Generator](https://www.typescriptlang.org/docs/handbook/iterators-and-generators.html) format, since I wanted to leverage the use of stepping through each algorithm for a friendlier learning experience. Some algorithms required a simple recursive step like the Backtracking variants, but others needed to apply probabilistic steps or bitwise manipulation like Simulated Annealing and Pattern matching. Of course, if you'd simply like to experience it, you can select an algorithm from the menu.
 
 I opted out of using a `<canvas>` for this implementation, though it would probably be more intuitive to leverage this as I can avoid pitfalls with rendering with HTML/CSS for more intricate designs. I managed to work with a 2D state for most of my data manipulation, and render that final state with some crafty implementation to get what you see on the frontpage. Regardless, I hope it is somewhat satisfactory as a playground.
 
@@ -106,22 +106,22 @@ Let's take a closer look at the most primitive solver provided by [suji](https:/
 ```typescript
 function* solveBacktracking(grid: GridCell[][]): Generator<GridCell[][]> {
 
-    const emptyCell = findEmptyCell(grid);
-    if (!emptyCell) return true;
-    const { row, col } = emptyCell;
+   const emptyCell = findEmptyCell(grid);
+   if (!emptyCell) return true;
+   const { row, col } = emptyCell;
 
-    for (let num = 1; num <= 9; num++) {
-        if (isValid(grid, row, col, num)) {
+   for (let num = 1; num <= 9; num++) {
+       if (isValid(grid, row, col, num)) {
 
-            const newGrid = grid.map(row => row.map(cell => ({ ...cell })));
-            newGrid[row][col].value = num as ValidDigit;
-            yield newGrid;
+           const newGrid = grid.map(row => row.map(cell => ({ ...cell })));
+           newGrid[row][col].value = num as ValidDigit;
+           yield newGrid;
 
-            const result = yield* solveBacktracking(newGrid);
-            if (result) return true;
-        }
-    }
-    return false;
+           const result = yield* solveBacktracking(newGrid);
+           if (result) return true;
+       }
+   }
+   return false;
 }
 ```
 
@@ -133,7 +133,7 @@ if (!emptyCell) return true;
 const { row, col } = emptyCell;
 ```
 
-Given we have a function to find an empty cell, we can verify if a empty cell exists. If it doesn't, then the puzzle is solved. Otherwise, we can set our coordinates to this empty cell to determine a value for it. By having this function recurse, we can eventually fill up every remaining empty cell until we arrive at our solution.
+Given we have a function to find an empty cell, we can verify if an empty cell exists. If it doesn't, then the puzzle is solved. Otherwise, we can set our coordinates to this empty cell to determine a value for it. By having this function recurse, we can eventually fill up every remaining empty cell until we arrive at our solution.
 
 When it comes to producing the next-working state of the grid, we can use the keyword `yield` to stop iteration through our function and allow our parent functions to display the grid's new state.
 
@@ -160,59 +160,59 @@ For instance, a working C++ implementation of Generators can be shown below:
 #include <coroutine>
 
 struct Generator {
-    struct promise_type {
-        std::vector<std::vector<int>> grid;
+   struct promise_type {
+       std::vector<std::vector<int>> grid;
 
-        Generator get_return_object() {
-            return Generator{*this};
-        }
+       Generator get_return_object() {
+           return Generator{*this};
+       }
 
-        std::suspend_always yield_value(std::vector<std::vector<int>> g) {
-            grid = std::move(g);
-            return {};
-        }
+       std::suspend_always yield_value(std::vector<std::vector<int>> g) {
+           grid = std::move(g);
+           return {};
+       }
 
-        std::suspend_always return_void() {
-            return {};
-        }
+       std::suspend_always return_void() {
+           return {};
+       }
 
-        void unhandled_exception() {
-            std::exit(1);
-        }
-    };
+       void unhandled_exception() {
+           std::exit(1);
+       }
+   };
 
-    struct iterator {
-        promise_type* promise;
-        bool done = false;
-        iterator(promise_type* promise) : promise(promise) {}
+   struct iterator {
+       promise_type* promise;
+       bool done = false;
+       iterator(promise_type* promise) : promise(promise) {}
 
-        iterator& operator++() {
-            done = true;
-            return *this;
-        }
+       iterator& operator++() {
+           done = true;
+           return *this;
+       }
 
-        bool operator==(const iterator& other) const {
-            return done == other.done;
-        }
+       bool operator==(const iterator& other) const {
+           return done == other.done;
+       }
 
-        const std::vector<std::vector<int>>& operator*() const {
-            return promise->grid;
-        }
-    };
+       const std::vector<std::vector<int>>& operator*() const {
+           return promise->grid;
+       }
+   };
 
-    promise_type& promise;
-    iterator begin() { return iterator(&promise); }
-    iterator end() { return iterator(&promise); }
-    Generator(promise_type& promise) : promise(promise) {}
+   promise_type& promise;
+   iterator begin() { return iterator(&promise); }
+   iterator end() { return iterator(&promise); }
+   Generator(promise_type& promise) : promise(promise) {}
 };
 
 Generator generate_2d_array() {
-    std::vector<std::vector<int>> grid = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
-    co_yield grid;
+   std::vector<std::vector<int>> grid = {
+       {1, 2, 3},
+       {4, 5, 6},
+       {7, 8, 9}
+   };
+   co_yield grid;
 }
 ```
 
@@ -220,13 +220,13 @@ To complete our algorithm, we just want to check if every number is a valid one,
 
 ```typescript
 for (let num = 1; num <= 9; num++) {
-        if (isValid(grid, row, col, num)) {
-           // ...
-    }
+       if (isValid(grid, row, col, num)) {
+          // ...
+   }
 }
 ```
 
-Since we are deep copying, we'll always have the previous state `grid` available if we don't find a valid state after recursion, allowing us to efficiently backtrack when we don't arrive at an optimal path. This algorithm, like other Backtracking algorithm, can be simplified to a DFS approach.
+Since we are deep copying, we'll always have the previous state `grid` available if we don't find a valid state after recursion, allowing us to efficiently backtrack when we don't arrive at an optimal path. This algorithm, like other Backtracking algorithms, can be simplified to a DFS approach.
 
 # Sources
 
@@ -261,10 +261,10 @@ Have a comment, question, or an ask? Feel free to [email](mailto:sweeneyngo@prot
             <link>https://ifuxyl.dev/blog/an-outsider's-queerness</link>
             <guid>https://ifuxyl.dev/blog/an-outsider's-queerness</guid>
             <pubDate>Wed, 25 Sep 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[An exploratoration on the definition and role of an outsider, and how that emerges as pseudo-queerness, especially amongst the LGBTQ+.]]></description>
+            <description><![CDATA[An exploration on the definition and role of an outsider, and how that emerges as pseudo-queerness, especially amongst the LGBTQ+.]]></description>
             <content:encoded><![CDATA[
-I remember a conversation I had with a close friend back in high school. She asked why I never opened up to her, depsite being friends since elementary. I thought I've always did-- I told her jokes, talked about my day, my homework, and played games with her.
-Wasn't that the core essence of a friendship? I realize it wasn't enough for her. What I show to her, externally, must delve deeper into the sea of my psyche. I would have to show **vulnerability**, because to be vulnerable is to trust. Trust is important because it's a marker to show how important they are to you, and it directly affects your actions & behaviors with them.
+I remember a conversation I had with a close friend back in high school. She asked why I never opened up to her, despite being friends since elementary. I thought I've always done-- I told her jokes, talked about my day, my homework, and played games with her.
+Wasn't that the core essence of a friendship? I realized it wasn't enough for her. What I show to her, externally, must delve deeper into the sea of my psyche. I would have to show **vulnerability**, because to be vulnerable is to trust. Trust is important because it's a marker to show how important they are to you, and it directly affects your actions & behaviors with them.
 
 I realize by not showing that with her, I was "untrusting". But, I wanted to respond with my own question. I couldn't find the words and at that point, she left the conversation.
 I never talked to her again, and I wish I could've put her at ease.
@@ -274,13 +274,13 @@ At the end, I remembered what I wanted to ask her:
 
 # "It's just introversion."
 
-I'm a pretty quiet person. I don't speak much, and I don't like to overshare to people I don't know. In other words, I keep to myself a lot. People have similar experiences, and they colloquially refer to this behavior as "introversion".
+I'm a pretty quiet person. I don't speak much, and I don't like to overshare with people I don't know. In other words, I keep to myself a lot. People have similar experiences, and they colloquially refer to this behavior as "introversion".
 
-I liked that word because it made me feel less alone. I was able to associate my identity & character with a single, definable word. And instead of having to justify every aspect of myself on each encounter, I can simply say: "I'm just an introvert".
+I liked that word because it made me feel less alone. I was able to associate my identity & character with a single, definable word. And instead of having to justify every aspect of myself in each encounter, I can simply say: "I'm just an introvert".
 
 But, I have a hard time trusting others. I can't bring myself to forge meaningful relationships because of my reluctance to trust. And yet, I loathe superficiality.
 
-Recently, I've met a couple of people my age. They were the perfect match for me: calm, down-to-earth, conscientous of the world, and most importantly, accepting. I found myself beaming as we talked about random topics & experiences in our lives, and I left it smiling shamelessly at how euphoric it was. I realize I might not be an introvert, or more specifically, "just" an introvert. It's not binary. It's not this or that. It's easy to treat it like zeroes and ones, but my true, authentic self requires something in the middle. It requires something that introduces external variables, possibilities, context, or anything that can constitute who I am.
+Recently, I've met a couple of people my age. They were the perfect match for me: calm, down-to-earth, conscientious of the world, and most importantly, accepting. I found myself beaming as we talked about random topics & experiences in our lives, and I left it smiling shamelessly at how euphoric it was. I realize I might not be an introvert, or more specifically, "just" an introvert. It's not binary. It's not this or that. It's easy to treat it like zeroes and ones, but my true, authentic self requires something in the middle. It requires something that introduces external variables, possibilities, context, or anything that can constitute who I am.
 
 ## Living in Binary
 
@@ -292,7 +292,7 @@ We treat our identities as binary choices. I called myself an introvert because 
 
 In conversation, we're racing around the clock to get to know each other. Historically, the easiest way to convey yourself to others is through binary labels. We think of our character as a checklist to compare ourselves with others. Once we enter later stages in our relationship, we can then unfold the binary labels to the truest element of ourselves.
 
-But paradoxically, the present is valuable. To spend every minute grounded in the present, even if we're "running out of time" is inexpicably beneficial. It's nice to have labels, but relationships build by stripping that away. Everybody is uniquely their own, and labels only obfuscate that self from others. To live without binary is to truly be free.
+But paradoxically, the present is valuable. To spend every minute grounded in the present, even if we're "running out of time" is inexplicably beneficial. It's nice to have labels, but relationships build by stripping that away. Everybody is uniquely their own, and labels only obfuscate that self from others. To live without binary is to truly be free.
 
 ## What is Queerness, to me
 
@@ -302,13 +302,13 @@ In other aspects of myself, people think I'm a bookworm, so they're surprised I'
 
 These things don't register as expected because it comes with the territory of getting to know someone. You start to unravel these layers that made up your perception of them, and it's up to you to ultimately decide if it affects you or not.
 
-But there's also the intrinsic part of the "unexpectedness" with our true selves. I've once demonized myself for being different. I look up to others who are that version of me I'm trying to convince others I am. But through rose-colored glasses, I only hurt myself by not embracing the "bad" parts about me. What I show externally is my own need to be perceived as. I want to look smart, I want to be feminine, I want to be the "token gay".
+But there's also the intrinsic part of the "unexpectedness" with our true selves. I've once demonized myself for being different. I look up to others who are that version of me. I'm trying to convince others I am. But through rose-colored glasses, I only hurt myself by not embracing the "bad" parts about me. What I show externally is my own need to be perceived as. I want to look smart, I want to be feminine, I want to be the "token gay".
 
 But, I'm not. I'm just me. I used to say that with disdain, but now it's become empowering. I am me, and nobody else but me.
 
 Queerness is the expression of the true self. It's a violation of the binary, and an embrace in the spectrum. It takes what was the default, and unravels it to a myriad of possibilities. It's an exploration towards self-discovery, because to discover oneself is to abolish the rules that bound you to a lesser form. Queerness is the sound of doors opening. Queerness is freedom.
 
-I think I am gay. I'm attracted to the same-sex, but I also love fictional women. I used to have female crushes, but I definitely have male ones. But, I think I am gay and that truth is my own. There's no definition of being gay, much like how there's no definition on being "smart". It's subjective, complicated, difficult, and ultimately pointless. Because it's just a part of you, it's not a fact or requires reason or needs special attention. It's pointless to debate because it's the undeniable truth.
+I think I am gay. I'm attracted to the same-sex, but I also love fictional women. I used to have female crushes, but I definitely have male ones. But, I think I am gay and that truth is my own. There's no definition of being gay, much like how there's no definition of being "smart". It's subjective, complicated, difficult, and ultimately pointless. Because it's just a part of you, it's not a fact or requires reason or needs special attention. It's pointless to debate because it's the undeniable truth.
 
 So, a fact about me is: I am gay, and I have a story to tell.
 
@@ -318,13 +318,13 @@ There's a [documentary](https://youtu.be/6VduIJPAHaQ?si=yunfkjWMoCGpTzQQ) addres
 
 Those who aren't queer, those who have a good career, a loving family, a roof over their heads-- they do not have to prove to others to be happy. They are comfortable with who they are because they are our society's definition of normal. When we start associating outside of this normal, we treat ourselves as "less". A person that is different is a person who is **not** normal. We call these people "outsiders".
 
-It's not just physical differences, but even mental ones. Our need to feel connected to others take priority over our need to be ourselves. Why have your own political ideas when you can lean to a specific party? Why have opinions on how to live your life when you can emulate the life of someone else? Why complicate yourself when being similar to others will make you feel less uncomfortable?
+It's not just physical differences, but even mental ones. Our need to feel connected to others takes priority over our need to be ourselves. Why have your own political ideas when you can lean to a specific party? Why have opinions on how to live your life when you can emulate the life of someone else? Why complicate yourself when being similar to others will make you feel less uncomfortable?
 
 This isn't strictly an internal battle. Many people face struggle from outward backlash and biases from others. We use stereotypes to categorize people we don't know, and to make our judgements on someone despite barely being introduced to them.
 
 However, no one is coming to save us. We only truly have ourselves, and we have to give ourselves the respect we deserve when no one else can.
 
-But to be comfortable, we need to respect our intuition. The choices we make-- the lives we decide to live-- is uniquely our own. In my experience, I felt like I was chasing for a goal I never truly wanted. It stems from envy of others who seem more successful and more accomplished. [Workaholism](https://www.youtube.com/watch?v=iAMzp-jFymY) is a manifestion of our need for success, regardless of our goals. It's obsession for more, not a journey to self-realization. I had to revisit my values, my goals, and be satisfied regardless if anyone agreed with me.
+But to be comfortable, we need to respect our intuition. The choices we make-- the lives we decide to live-- are uniquely our own. In my experience, I felt like I was chasing for a goal I never truly wanted. It stems from envy of others who seem more successful and more accomplished. [Workaholism](https://www.youtube.com/watch?v=iAMzp-jFymY) is a manifestion of our need for success, regardless of our goals. It's an obsession for more, not a journey to self-realization. I had to revisit my values, my goals, and be satisfied regardless if anyone agreed with me.
 
 It's lonely, definitely, but it is not permanent. As the world changes, we change too. We will find our people, we will find that solace, but they're not waiting for us. We have to fight our battles, learn to channel positivity in ourselves, and seek out others who can carry that same love.
 
@@ -368,7 +368,7 @@ Passphrases are beneficial because they can be long and have high entropy, makin
 
 For example, "Cats play with yarn" is easy to guess because cats are commonly associated with yarn.
 
-Even worse, attackers can use [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack) which reduce the entropy to the level of individual words, making the passphrase as vulnerable as a simple password.
+Even worse, attackers can use [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack) which reduces the entropy to the level of individual words, making the passphrase as vulnerable as a simple password.
 
 So, how can we achieve both the ease of remembering passphrases and the high entropy of complex passwords?
 
@@ -382,7 +382,7 @@ Similarly, using uncommon, loosely connected words to create a passphrase can se
 
 # What are Markov Chains?
 
-To put it simply, it's a state machine. Let's assume we're forcasting the weather.
+To put it simply, it's a state machine. Let's assume we're forecasting the weather.
 
 The current weather can alternate between sunny, windy, cloudy, etc. We can think of these as **"states"**. So, let's assume that the current state of the weather is sunny. If we see a raincloud approaching, we can assume that the weather can transition to a rainy state. However, we cannot be certain, as weather relies on probability.
 
@@ -390,7 +390,7 @@ A sunny weather can just as easily remain sunny, change to rainy, or even cloudy
 
 ![Markov chain](https://healeycodes.com/_next/image?url=%2Fposts%2Fgenerating-text-with-markov-chains%2Fweather-markov-chain.png&w=640&q=100)
 
-From this diagram, a sunny weather has a 90% change of being sunny, and a 10% change of being rainy.
+From this diagram, sunny weather has a 90% change of being sunny, and a 10% change of being rainy.
 
 Note that a Markov chain doesn't necessarily scale with time or any metric that increases over time. More specifically, a Markov chain helps compute the next step based on the current state.
 
@@ -419,7 +419,7 @@ As a result, you'll have a sentence that may resemble phrases in literary works,
 ```go
 futureWords, ok := markovChain.Transitions[currentWord]
 if !ok || len(nextSentence) == 0 {
-	return passphrase
+   return passphrase
 }
 
 nextWord = futureWords[rand.Intn(len(futureWords))]
@@ -432,24 +432,24 @@ To find starting words, we can (1) use capitalized words in the corpus or (2) ma
 ```go
 func (m *MarkovChain) addSentence(sentence string) {
 
-	words := strings.Fields(sentence)
-	length := len(words)
+   words := strings.Fields(sentence)
+   length := len(words)
 
-	if length > 0 {
-		startWord := words[0]
-		m.StartWords[startWord] = true
-	}
-	// ...
+   if length > 0 {
+       startWord := words[0]
+       m.StartWords[startWord] = true
+   }
+   // ...
 }
 
 func (m *MarkovChain) getRandomStartWord() string {
 
-	var startWords []string
-	for word := range m.StartWords {
-		startWords = append(startWords, word)
-	}
+   var startWords []string
+   for word := range m.StartWords {
+       startWords = append(startWords, word)
+   }
 
-	return startWords[rand.Intn(len(startWords))]
+   return startWords[rand.Intn(len(startWords))]
 }
 
 ```
@@ -461,11 +461,11 @@ To create a password from the passphrase, we can use the first letters of each w
 ```go
 func CreatePassword(sentence string, capLevel int, noiseLevel int) (string, error) {
 
-	words := strings.Fields(sentence)
-	acronym := CreateAcronym(words)
-	noisyAcronym, err := addNoise(acronym, noiseLevel)
+   words := strings.Fields(sentence)
+   acronym := CreateAcronym(words)
+   noisyAcronym, err := addNoise(acronym, noiseLevel)
 
-	return strings.Join(noisyAcronym, ""), nil
+   return strings.Join(noisyAcronym, ""), nil
 }
 ```
 
@@ -532,12 +532,12 @@ Besides the introduction, the crux of this article will focus on Bill Gosper's [
 
 # What is HashLife?
 
-**Simply put, it is a memoization algorithm to compute long-term fate of a configuration.**
+**Simply put, it is a memoization algorithm to compute the long-term fate of a configuration.**
 For instance, you can quite easily generate a 6,366,548,773,467,669,985,195,496,000 (6 [octillionth](https://en.wikipedia.org/wiki/Names_of_large_numbers 'Names of large numbers')) generation of a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine 'Turing machine') in [Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life "Conway's Game of Life").
 
 If I were to give it a more descriptive title, one that explains exactly what it accomplishes, it would be: ["Exploiting Regularities in Large Cellular Spaces"](https://usr.lmf.cnrs.fr/~jcf/m1/gol/gosper-84.pdf).
 
-In all walks of life, redundancy is everywhere. Whether you wake up in the morning to brush your teeth, or meeting up with the same clique of friends, or even communing to work, we carry ourselves through the "ordinary". Our brains can even remember when we've done something again, such as when we encounter a hard math question that we've studied the night before, or learning a new language, and we can use our memory to guide us towards the answer.
+In all walks of life, redundancy is everywhere. Whether you wake up in the morning to brush your teeth, or meeting up with the same clique of friends, or even commuting to work, we carry ourselves through the "ordinary". Our brains can even remember when we've done something again, such as when we encounter a hard math question that we've studied the night before, or learning a new language, and we can use our memory to guide us towards the answer.
 
 Through redundancy, we can achieve memory, and through memory, we can arrive at the solution with less time & resources from the first time we've attempted it.
 
@@ -584,12 +584,12 @@ We can visualize this example through this:
 
 ![Quadtree of a 16x16 grid](https://www.dev-mind.blog/wp-content/uploads/2020/05/quadtree1-1024x839.png)
 
-In quadtrees, graphs/grids are referred to as nodes. Treat every node as it's own "configuration grid". Notice how each node holds a portion of the configuration of its parent node. Each level of the graph decreases by one as you move down the graph:
+In quadtrees, graphs/grids are referred to as nodes. Treat every node as its own "configuration grid". Notice how each node holds a portion of the configuration of its parent node. Each level of the graph decreases by one as you move down the graph:
 
 - For example, a level 1 node is a 2x2 grid.
 - For example, a level 2 node is a 4x4 grid.
 - For example, a level 3 node is a 8x8 grid.
-- Notice that each new level can fit four nodes of the previous level. A level 2 node's 4x4 grid can hold exactly four 2x2 grids, or exactly four level 1 node.
+- Notice that each new level can fit four nodes of the previous level. A level 2 node's 4x4 grid can hold exactly four 2x2 grids, or exactly four level 1 nodes.
 - At level 0, it contains the exact pixel, or 1x1 grid.
 
 ## Optimizations
@@ -604,7 +604,7 @@ We'll start by stating some observations from building out the exhaustive versio
 - Formulating this, the number of nodes is 2^(2^k \* 2^k), where k is the level.
 - Obviously, the number of configurations skyrockets as we move up the graph, but it is important to understand how small & feasible the lower levels are. In fact, we can consider them as "building blocks", or more formally "cardinal nodes".
 
-**2. The number of specific grids occuring is much lower.**
+**2. The number of specific grids occurring is much lower.**
 This is true, and we should NOT exhaust all possible grids. Therefore, we can treat the above optimization as a hard limit.
 
 **3. To maximize sharing a common grid, only create one instance of that grid in our quadtree.**
@@ -612,7 +612,7 @@ As you may observe from the image, there are 3 out of the 4 quadrants of the 8x8
 
 For the application, we can use hashing to map any grid to an existing grid on the quadtree, avoiding creating duplicates.
 
-Below, each level may have subgrids that are already memorized by the previous level. For instance, the level 3 node has **three** subgrids that match the left level 2 node, and **one** subgrid that match the right level 2 node. This is our ideal quadtree-- **tightly compressed**!
+Below, each level may have subgrids that are already memorized by the previous level. For instance, the level 3 node has **three** subgrids that match the left level 2 node, and **one** subgrid that matches the right level 2 node. This is our ideal quadtree-- **tightly compressed**!
 
 ![Same original 8x8 grid, but as compressed quadtree.](https://www.dev-mind.blog/wp-content/uploads/2020/05/quadtree2-975x1024.png)
 
@@ -626,7 +626,7 @@ At each generation, use the neighbors of a cell to compute the next state.
 
 It's O(kn), where n is the number of cells. Therefore, as we increase the number of cells, the algorithm will have to update every cell by a constant factor k. So, for sextillion cells, we'd have to make multiple sextillion updates!
 
-Moreover, the representation of our grid is, well a grid! While it is the most intuitive way to represent our problem, there is no room to compress it, **especially** when we're encountering repetition that our grid just doesn't account for. Instead, we want to abuse pointers & caching in our representation, leading to the "quadtree".
+Moreover, the representation of our grid is, well, a grid! While it is the most intuitive way to represent our problem, there is no room to compress it, **especially** when we're encountering repetition that our grid just doesn't account for. Instead, we want to abuse pointers & caching in our representation, leading to the "quadtree".
 
 _Aside: Why representation is important_:
 
@@ -647,52 +647,52 @@ With this representation, each of the four quadrants represents (nw, ne, sw, se)
 ```typescript
 class Node {
 
-    /*
-     * Four quadrants of a node.
-     *
-     *      nw, ne,
-     *      sw, se
-     *
-     * At level one, each quadrant is either (0, 1).
-     */
+   /*
+    * Four quadrants of a node.
+    *
+    *      nw, ne,
+    *      sw, se
+    *
+    * At level one, each quadrant is either (0, 1).
+    */
 
-    nw: Node | number;
-    ne: Node | number;
-    sw: Node | number;
-    se: Node | number;
+   nw: Node | number;
+   ne: Node | number;
+   sw: Node | number;
+   se: Node | number;
 
-    // Current level of the node in the quadtree.
-    level: number;
+   // Current level of the node in the quadtree.
+   level: number;
 
-    constructor(
-        nw: Node | number,
-        ne: Node | number,
-        sw: Node | number,
-        se: Node | number
-    ) {
-        this.nw = nw;
-        this.ne = ne;
-        this.sw = sw;
-        this.se = se;
+   constructor(
+       nw: Node | number,
+       ne: Node | number,
+       sw: Node | number,
+       se: Node | number
+   ) {
+       this.nw = nw;
+       this.ne = ne;
+       this.sw = sw;
+       this.se = se;
 
-        this.level = 0;
+       this.level = 0;
 
-        if (typeof nw === "number" &&
-            typeof ne === "number" &&
-            typeof sw === "number" &&
-            typeof se === "number"
-        ) {
-            this.level = 1; // 2x2
-        }
-        else if (
-            nw instanceof Node &&
-            ne instanceof Node &&
-            sw instanceof Node &&
-            se instanceof Node
-        ) {
-            this.level = nw.level + 1;
-        }
-    }
+       if (typeof nw === "number" &&
+           typeof ne === "number" &&
+           typeof sw === "number" &&
+           typeof se === "number"
+       ) {
+           this.level = 1; // 2x2
+       }
+       else if (
+           nw instanceof Node &&
+           ne instanceof Node &&
+           sw instanceof Node &&
+           se instanceof Node
+       ) {
+           this.level = nw.level + 1;
+       }
+   }
 ```
 
 You'll notice that if the quadrants are at level one, they'll be a 1x1 grid of either 0 or 1, so we can represent them as a number rather than an entire Node. This distinction is useful to label each level, which you can see in our constructor.
@@ -711,30 +711,30 @@ Since we will **already know all the possible updates** of 16 2x2 blocks, we can
 
 ```javascript
 function evolveNode(node) {
-  if (node.level < 2) throw new Error('Current level cannot be less than 2.');
-  if (
-    !(
-      this.nw instanceof Node &&
-      this.ne instanceof Node &&
-      this.sw instanceof Node &&
-      this.se instanceof Node
-    )
-  )
-    throw new Error('Current node cannot be at depth 1.');
+ if (node.level < 2) throw new Error('Current level cannot be less than 2.');
+ if (
+   !(
+     this.nw instanceof Node &&
+     this.ne instanceof Node &&
+     this.sw instanceof Node &&
+     this.se instanceof Node
+   )
+ )
+   throw new Error('Current node cannot be at depth 1.');
 
-  let resultNode;
-  if (node.level === 2) {
-    // Evolve via simple implementation.
-  } else {
-    resultNode = constructNode(
-      evolveNode(node.nw),
-      evolveNode(node.ne),
-      evolveNode(node.sw),
-      evolveNode(node.se),
-    );
-  }
+ let resultNode;
+ if (node.level === 2) {
+   // Evolve via simple implementation.
+ } else {
+   resultNode = constructNode(
+     evolveNode(node.nw),
+     evolveNode(node.ne),
+     evolveNode(node.sw),
+     evolveNode(node.se),
+   );
+ }
 
-  return resultNode;
+ return resultNode;
 }
 ```
 
@@ -768,212 +768,212 @@ When we recurse, each subgrid will calculate its own center grid, which we can s
 
 We haven't considered the edges of the center grid, because we simply don't need to! Consider a fixed grid for Conway's Game of Life. On the edges of the grid, these cells cannot be determined, since they lack all eight neighbors to determine whether they can live or not.
 
-To put it more rigorously, we CANNOT determine the result of the edges of the grid without the information found outside of the given grid. Since we are strictly working independently with our grid, we focus on determining the center grid, as we can guarentee the correct result.
+To put it more rigorously, we CANNOT determine the result of the edges of the grid without the information found outside of the given grid. Since we are strictly working independently with our grid, we focus on determining the center grid, as we can guarantee the correct result.
 
-When implementing, it's crucial the quadtree accomodates for the entire configuration. If the root node has edge cells that are active, then the tree is not sufficiantly large enough and must expand to accomodate for those cells.
+When implementing, it's crucial the quadtree accommodates for the entire configuration. If the root node has edge cells that are active, then the tree is not sufficiently large enough and must expand to accommodate for those cells.
 
 However, notice how we can't construct the blue center grid with the green center grids because they're not completely aligned. Only a quarter of each green center grid fits in the center blue square. We're only capturing the corners of the blue center grid.
 
-Looking closer, it may be feasible to construct the blue square if we found multiple green center grids that outline the perimeter of the blue square. This observation paves the way for the "nine auxillary squares" strategy.
+Looking closer, it may be feasible to construct the blue square if we found multiple green center grids that outline the perimeter of the blue square. This observation paves the way for the "nine auxiliary squares" strategy.
 
-### Nine auxillary squares
+### Nine auxiliary squares
 
-![Nine auxillary squares](https://www.dev-mind.blog/wp-content/uploads/2020/05/center_comput.png)
+![Nine auxiliary squares](https://www.dev-mind.blog/wp-content/uploads/2020/05/center_comput.png)
 
 ```javascript
 // Second version.
 function evolveNode(node) {
-  if (node.level < 2) throw new Error('Current level cannot be less than 2.');
-  if (
-    !(
-      this.nw instanceof Node &&
-      this.ne instanceof Node &&
-      this.sw instanceof Node &&
-      this.se instanceof Node
-    )
-  )
-    throw new Error('Current node cannot be at depth 1.');
+ if (node.level < 2) throw new Error('Current level cannot be less than 2.');
+ if (
+   !(
+     this.nw instanceof Node &&
+     this.ne instanceof Node &&
+     this.sw instanceof Node &&
+     this.se instanceof Node
+   )
+ )
+   throw new Error('Current node cannot be at depth 1.');
 
-  let resultCenterNode;
-  if (node.level === 2) {
-    // Evolve via simple implementation.
-  } else {
-    const n00 = node.nw.centerNode();
-    const n01 = node.nw.centerHorizontalNode((east = this.ne));
-    const n02 = node.ne.centerNode();
-    const n10 = node.nw.centerVerticalNode((south = this.sw));
-    const n11 = node.centerNodeNode();
-    const n12 = node.ne.centerVerticalNode((south = this.se));
-    const n20 = node.sw.centerNode();
-    const n21 = node.sw.centerHorizontalNode((east = this.se));
-    const n22 = node.se.centerNode();
+ let resultCenterNode;
+ if (node.level === 2) {
+   // Evolve via simple implementation.
+ } else {
+   const n00 = node.nw.centerNode();
+   const n01 = node.nw.centerHorizontalNode((east = this.ne));
+   const n02 = node.ne.centerNode();
+   const n10 = node.nw.centerVerticalNode((south = this.sw));
+   const n11 = node.centerNodeNode();
+   const n12 = node.ne.centerVerticalNode((south = this.se));
+   const n20 = node.sw.centerNode();
+   const n21 = node.sw.centerHorizontalNode((east = this.se));
+   const n22 = node.se.centerNode();
 
-    resultCenterNode = assembleNineNode(
-      evolveNode(n00),
-      evolveNode(n01),
-      evolveNode(n02),
-      evolveNode(n10),
-      evolveNode(n11),
-      evolveNode(n12),
-      evolveNode(n20),
-      evolveNode(n21),
-      evolveNode(n22),
-    );
-  }
+   resultCenterNode = assembleNineNode(
+     evolveNode(n00),
+     evolveNode(n01),
+     evolveNode(n02),
+     evolveNode(n10),
+     evolveNode(n11),
+     evolveNode(n12),
+     evolveNode(n20),
+     evolveNode(n21),
+     evolveNode(n22),
+   );
+ }
 
-  return resultCenterNode;
+ return resultCenterNode;
 }
 
 function centerNode() {
-  return this.constructor.constructNode(
-    this.nw.se,
-    this.ne.sw,
-    this.sw.ne,
-    this.se.nw,
-  );
+ return this.constructor.constructNode(
+   this.nw.se,
+   this.ne.sw,
+   this.sw.ne,
+   this.se.nw,
+ );
 }
 
 function centerHorizontalNode(east) {
-  // Requires two nodes, the west ("this") & the east ("east").
-  return this.constructor.constructNode(
-    this.ne.se,
-    east.nw.sw,
-    this.se.ne,
-    east.sw.nw,
-  );
+ // Requires two nodes, the west ("this") & the east ("east").
+ return this.constructor.constructNode(
+   this.ne.se,
+   east.nw.sw,
+   this.se.ne,
+   east.sw.nw,
+ );
 }
 
 function centerVerticalNode(south) {
-  // Requires two nodes, the north ("this") & the south ("south").
-  return this.constructor.constructNode(
-    this.sw.se,
-    this.se.sw,
-    south.nw.ne,
-    south.ne.nw,
-  );
+ // Requires two nodes, the north ("this") & the south ("south").
+ return this.constructor.constructNode(
+   this.sw.se,
+   this.se.sw,
+   south.nw.ne,
+   south.ne.nw,
+ );
 }
 
 function centerCenterNode() {
-  // Like center node, but one more iteration.
-  return this.constructor.constructNode(
-    this.nw.se.se,
-    this.ne.sw.sw,
-    this.sw.ne.ne,
-    this.se.nw.nw,
-  );
+ // Like the center node, but one more iteration.
+ return this.constructor.constructNode(
+   this.nw.se.se,
+   this.ne.sw.sw,
+   this.sw.ne.ne,
+   this.se.nw.nw,
+ );
 }
 ```
 
-A complication with this approach is that we'd have to create an entirely new function just to break apart these nine auxillary squares and get the portion we need to assemble the blue center square.
+A complication with this approach is that we'd have to create an entirely new function just to break apart these nine auxiliary squares and get the portion we need to assemble the blue center square.
 
-When constructing the original node, we can avoid breaking down the subgrids of each nine grids, and instead creating each of the four center quadrant grid of the blue grid.
+When constructing the original node, we can avoid breaking down the subgrids of each nine grids, and instead create each of the four center quadrant grids of the blue grid.
 
-Since the center blue grid has four quadrants, we can take the four surrounding auxillary grids for each quadrant, use our construct function to create our center grid, and then combine all these four quadrants together to form the final blue grid. Isn't that neat!
+Since the center blue grid has four quadrants, we can take the four surrounding auxiliary grids for each quadrant, use our construct function to create our center grid, and then combine all these four quadrants together to form the final blue grid. Isn't that neat!
 
 ```javascript
 // Third version.
 function evolveNode(node) {
-  if (node.level < 2) throw new Error('Current level cannot be less than 2.');
-  if (
-    !(
-      this.nw instanceof Node &&
-      this.ne instanceof Node &&
-      this.sw instanceof Node &&
-      this.se instanceof Node
-    )
-  )
-    throw new Error('Current node cannot be at depth 1.');
+ if (node.level < 2) throw new Error('Current level cannot be less than 2.');
+ if (
+   !(
+     this.nw instanceof Node &&
+     this.ne instanceof Node &&
+     this.sw instanceof Node &&
+     this.se instanceof Node
+   )
+ )
+   throw new Error('Current node cannot be at depth 1.');
 
-  let resultCenterNode;
-  if (node.level === 2) {
-    // Evolve via simple implementation.
-  } else {
-    const n00 = node.nw.centerNode();
-    const n01 = node.nw.centerHorizontalNode((east = this.ne));
-    const n02 = node.ne.centerNode();
-    const n10 = node.nw.centerVerticalNode((south = this.sw));
-    const n11 = node.centerNodeNode();
-    const n12 = node.ne.centerVerticalNode((south = this.se));
-    const n20 = node.sw.centerNode();
-    const n21 = node.sw.centerHorizontalNode((east = this.se));
-    const n22 = node.se.centerNode();
+ let resultCenterNode;
+ if (node.level === 2) {
+   // Evolve via simple implementation.
+ } else {
+   const n00 = node.nw.centerNode();
+   const n01 = node.nw.centerHorizontalNode((east = this.ne));
+   const n02 = node.ne.centerNode();
+   const n10 = node.nw.centerVerticalNode((south = this.sw));
+   const n11 = node.centerNodeNode();
+   const n12 = node.ne.centerVerticalNode((south = this.se));
+   const n20 = node.sw.centerNode();
+   const n21 = node.sw.centerHorizontalNode((east = this.se));
+   const n22 = node.se.centerNode();
 
-    const center_nw = constructNode(
-      evolveNode(n00),
-      evolveNode(n01),
-      evolveNode(n10),
-      evolveNode(n11),
-    );
+   const center_nw = constructNode(
+     evolveNode(n00),
+     evolveNode(n01),
+     evolveNode(n10),
+     evolveNode(n11),
+   );
 
-    const center_ne = constructNode(
-      evolveNode(n01),
-      evolveNode(n02),
-      evolveNode(n11),
-      evolveNode(n12),
-    );
+   const center_ne = constructNode(
+     evolveNode(n01),
+     evolveNode(n02),
+     evolveNode(n11),
+     evolveNode(n12),
+   );
 
-    const center_sw = constructNode(
-      evolveNode(n10),
-      evolveNode(n11),
-      evolveNode(n20),
-      evolveNode(n21),
-    );
+   const center_sw = constructNode(
+     evolveNode(n10),
+     evolveNode(n11),
+     evolveNode(n20),
+     evolveNode(n21),
+   );
 
-    const center_se = constructNode(
-      evolveNode(n11),
-      evolveNode(n12),
-      evolveNode(n21),
-      evolveNode(n22),
-    );
+   const center_se = constructNode(
+     evolveNode(n11),
+     evolveNode(n12),
+     evolveNode(n21),
+     evolveNode(n22),
+   );
 
-    resultCenterNode = constructNode(
-      center_nw.centerNode(),
-      center_ne.centerNode(),
-      center_sw.centerNode(),
-      center_se.centerNode(),
-    );
-  }
+   resultCenterNode = constructNode(
+     center_nw.centerNode(),
+     center_ne.centerNode(),
+     center_sw.centerNode(),
+     center_se.centerNode(),
+   );
+ }
 
-  return resultCenterNode;
+ return resultCenterNode;
 }
 
 function centerNode() {
-  return this.constructor.constructNode(
-    this.nw.se,
-    this.ne.sw,
-    this.sw.ne,
-    this.se.nw,
-  );
+ return this.constructor.constructNode(
+   this.nw.se,
+   this.ne.sw,
+   this.sw.ne,
+   this.se.nw,
+ );
 }
 
 function centerHorizontalNode(east) {
-  // Requires two nodes, the west ("this") & the east ("east").
-  return this.constructor.constructNode(
-    this.ne.se,
-    east.nw.sw,
-    this.se.ne,
-    east.sw.nw,
-  );
+ // Requires two nodes, the west ("this") & the east ("east").
+ return this.constructor.constructNode(
+   this.ne.se,
+   east.nw.sw,
+   this.se.ne,
+   east.sw.nw,
+ );
 }
 
 function centerVerticalNode(south) {
-  // Requires two nodes, the north ("this") & the south ("south").
-  return this.constructor.constructNode(
-    this.sw.se,
-    this.se.sw,
-    south.nw.ne,
-    south.ne.nw,
-  );
+ // Requires two nodes, the north ("this") & the south ("south").
+ return this.constructor.constructNode(
+   this.sw.se,
+   this.se.sw,
+   south.nw.ne,
+   south.ne.nw,
+ );
 }
 
 function centerCenterNode() {
-  // Like center node, but one more iteration.
-  return this.constructor.constructNode(
-    this.nw.se.se,
-    this.ne.sw.sw,
-    this.sw.ne.ne,
-    this.se.nw.nw,
-  );
+ // Like the center node, but one more iteration.
+ return this.constructor.constructNode(
+   this.nw.se.se,
+   this.ne.sw.sw,
+   this.sw.ne.ne,
+   this.se.nw.nw,
+ );
 }
 ```
 
@@ -988,12 +988,12 @@ To visualize the significance of this, imagine our pattern evolves in a circular
 ```javascript
 // A simple demonstration.
 const cache = {
-  // [grid]: centerGrid, or more specifically:
-  // [node]: evolve(node)
+ // [grid]: centerGrid, or more specifically:
+ // [node]: evolve(node)
 };
 ```
 
-However, hash tables cannot "hash" a node, since it only hash primitives (int, float, etc.) + strings.
+However, hash tables cannot "hash" a node, since it only has primitives (int, float, etc.) + strings.
 Therefore, we need to convert a grid to a "hash", and ensure that it is unique to that grid.
 
 The simplest approach is to use the pointer address, since our quadtree only has **one** instance of each grid, so all pointers pointing to it will have the exact same address. But, since the center nodes were originally mis-aligned with the original center node, they will result in different patterns, and thus different hashes. To alleviate this, we can make our hash a **combination** of the subnodes.
@@ -1010,124 +1010,124 @@ But at the same time, we're using memoization, so we're caching significantly mo
 For a 8x8 node, we evolve nine 4x4 nodes, then evolve those. Two evolutions.
 For a 16x16 node, we evolve nine 8x8 nodes, then evolve those. Since we established that the 8x8 nodes will have two evolutions, then we'll essentially achieve four evolutions.
 
-In summary, at each higher depth, we **double** the evolutions, all of which is cached immediately!
+In summary, at each higher depth, we **double** the evolutions, all of which are cached immediately!
 
 ```javascript
 // Fourth version.
 function evolveNode(node) {
-  if (node.level < 2) throw new Error('Current level cannot be less than 2.');
-  if (
-    !(
-      this.nw instanceof Node &&
-      this.ne instanceof Node &&
-      this.sw instanceof Node &&
-      this.se instanceof Node
-    )
-  )
-    throw new Error('Current node cannot be at depth 1.');
+ if (node.level < 2) throw new Error('Current level cannot be less than 2.');
+ if (
+   !(
+     this.nw instanceof Node &&
+     this.ne instanceof Node &&
+     this.sw instanceof Node &&
+     this.se instanceof Node
+   )
+ )
+   throw new Error('Current node cannot be at depth 1.');
 
-  let resultCenterNode;
-  if (node.level === 2) {
-    // Evolve via simple implementation.
-  } else {
-    const n00 = node.nw.centerNode();
-    const n01 = node.nw.centerHorizontalNode((east = this.ne));
-    const n02 = node.ne.centerNode();
-    const n10 = node.nw.centerVerticalNode((south = this.sw));
-    const n11 = node.centerNodeNode();
-    const n12 = node.ne.centerVerticalNode((south = this.se));
-    const n20 = node.sw.centerNode();
-    const n21 = node.sw.centerHorizontalNode((east = this.se));
-    const n22 = node.se.centerNode();
+ let resultCenterNode;
+ if (node.level === 2) {
+   // Evolve via simple implementation.
+ } else {
+   const n00 = node.nw.centerNode();
+   const n01 = node.nw.centerHorizontalNode((east = this.ne));
+   const n02 = node.ne.centerNode();
+   const n10 = node.nw.centerVerticalNode((south = this.sw));
+   const n11 = node.centerNodeNode();
+   const n12 = node.ne.centerVerticalNode((south = this.se));
+   const n20 = node.sw.centerNode();
+   const n21 = node.sw.centerHorizontalNode((east = this.se));
+   const n22 = node.se.centerNode();
 
-    const center_nw = constructNode(
-      evolveNode(n00),
-      evolveNode(n01),
-      evolveNode(n10),
-      evolveNode(n11),
-    );
+   const center_nw = constructNode(
+     evolveNode(n00),
+     evolveNode(n01),
+     evolveNode(n10),
+     evolveNode(n11),
+   );
 
-    const center_ne = constructNode(
-      evolveNode(n01),
-      evolveNode(n02),
-      evolveNode(n11),
-      evolveNode(n12),
-    );
+   const center_ne = constructNode(
+     evolveNode(n01),
+     evolveNode(n02),
+     evolveNode(n11),
+     evolveNode(n12),
+   );
 
-    const center_sw = constructNode(
-      evolveNode(n10),
-      evolveNode(n11),
-      evolveNode(n20),
-      evolveNode(n21),
-    );
+   const center_sw = constructNode(
+     evolveNode(n10),
+     evolveNode(n11),
+     evolveNode(n20),
+     evolveNode(n21),
+   );
 
-    const center_se = constructNode(
-      evolveNode(n11),
-      evolveNode(n12),
-      evolveNode(n21),
-      evolveNode(n22),
-    );
+   const center_se = constructNode(
+     evolveNode(n11),
+     evolveNode(n12),
+     evolveNode(n21),
+     evolveNode(n22),
+   );
 
-    resultCenterNode = constructNode(
-      evolveNode(center_nw),
-      evolveNode(center_ne),
-      evolveNode(center_sw),
-      evolveNode(center_se),
-    );
-  }
+   resultCenterNode = constructNode(
+     evolveNode(center_nw),
+     evolveNode(center_ne),
+     evolveNode(center_sw),
+     evolveNode(center_se),
+   );
+ }
 
-  return resultCenterNode;
+ return resultCenterNode;
 }
 
 function centerNode() {
-  return this.constructor.constructNode(
-    this.nw.se,
-    this.ne.sw,
-    this.sw.ne,
-    this.se.nw,
-  );
+ return this.constructor.constructNode(
+   this.nw.se,
+   this.ne.sw,
+   this.sw.ne,
+   this.se.nw,
+ );
 }
 
 function centerHorizontalNode(east) {
-  // Requires two nodes, the west ("this") & the east ("east").
-  return this.constructor.constructNode(
-    this.ne.se,
-    east.nw.sw,
-    this.se.ne,
-    east.sw.nw,
-  );
+ // Requires two nodes, the west ("this") & the east ("east").
+ return this.constructor.constructNode(
+   this.ne.se,
+   east.nw.sw,
+   this.se.ne,
+   east.sw.nw,
+ );
 }
 
 function centerVerticalNode(south) {
-  // Requires two nodes, the north ("this") & the south ("south").
-  return this.constructor.constructNode(
-    this.sw.se,
-    this.se.sw,
-    south.nw.ne,
-    south.ne.nw,
-  );
+ // Requires two nodes, the north ("this") & the south ("south").
+ return this.constructor.constructNode(
+   this.sw.se,
+   this.se.sw,
+   south.nw.ne,
+   south.ne.nw,
+ );
 }
 
 function centerCenterNode() {
-  // Like center node, but one more iteration.
-  return this.constructor.constructNode(
-    this.nw.se.se,
-    this.ne.sw.sw,
-    this.sw.ne.ne,
-    this.se.nw.nw,
-  );
+ // Like the center node, but one more iteration.
+ return this.constructor.constructNode(
+   this.nw.se.se,
+   this.ne.sw.sw,
+   this.sw.ne.ne,
+   this.se.nw.nw,
+ );
 }
 ```
 
 ## The Beauty of Hashlife
 
-Despite how difficult the algorithm may pose to be at first, especially when arriving at these properties unique to the Game of Life, one may ponder at just how simple & elegant the final solution is.
+Despite how difficult the algorithm may pose at first, especially when arriving at these properties unique to the Game of Life, one may ponder at just how simple & elegant the final solution is.
 
-It's a testament to the simplicity of recursion-- iterating over itself through smaller and smaller subtasks until we arrive at a solution. By allowing our algorithm to divide the work to smaller pieces, we can repeat repetitive work (such as applying the Conway's rules) to multiple smaller subgrids, re-assembling it to the original grid.
+It's a testament to the simplicity of recursion-- iterating over itself through smaller and smaller subtasks until we arrive at a solution. By allowing our algorithm to divide the work to smaller pieces, we can repeat repetitive work (such as applying Conway's rules) to multiple smaller subgrids, re-assembling it to the original grid.
 
 Moreover, it's astonishing how by just adding one more `evolveNode()` to our recursive function, we can dramatically increase the rate of iterations, which is only beneficial since we cache everything into memory.
 
-It's like trying to build a gigantic Lego set from the ground-up, focusing on the fundamental pieces we know and love, and tackling a large feat through this foundation. HashLife is a brilliant takeaway to how we achieve success through formidable tasks by breaking down such tasks to more managable pieces.
+It's like trying to build a gigantic Lego set from the ground-up, focusing on the fundamental pieces we know and love, and tackling a large feat through this foundation. HashLife is a brilliant takeaway to how we achieve success through formidable tasks by breaking down such tasks to more manageable pieces.
 
 There are so many implementation details we haven't discussed:
 
@@ -1180,7 +1180,7 @@ However, I was sick of dealing with the devil; it's inexcusably expensive to buy
 
 Also, audiophiles & music fans can unanimously agree that the recommendation system of Spotify & Apple Music doesn't meet the user's needs. It suffers from a strange "tunneling" effect, where artists you listen to are merely regurgitated back into your feed, with only a handful of new artists appearing in your Discover tab based on local listening & somewhat adjacent genres.
 
-Nowadays, I've developed a system that completely eliminates all streaming services from my life, relying only on a self-curated playlist, alternative applications, options to buy music.
+Nowadays, I've developed a system that completely eliminates all streaming services from my life, relying only on a self-curated playlist, alternative applications, and options to buy music.
 
 It's important to note that I am by no means an expert on collecting music, nor am I claiming that my method is the best way to find and share music. I'm simply explaining my thought process & workflow in the hopes that you'll learn something new that you didn't know before!
 
@@ -1219,9 +1219,9 @@ A tool that I found useful for discovering genres was [Music Map](https://www.mu
 
 ## Migrating to Self-Curation (\*)
 
-Let's say for an ideal citizen, they purchase a LP they really enjoy from Bandcamp, and now they have the digital files in WAV to listen for free. While Spotify & Apple Music allow individuals to listen to music offline through their local library, I would recommend shifting away from these softwares and use open-source alternatives to catalog your music.
+Let's say for an ideal citizen, they purchase a LP they really enjoy from Bandcamp, and now they have the digital files in WAV to listen to for free. While Spotify & Apple Music allow individuals to listen to music offline through their local library, I would recommend shifting away from these softwares and use open-source alternatives to catalog your music.
 
-A lovely person by the name of Marcika was able to document how they were able to upload their music to a [portable MP3 player](https://www.youtube.com/watch?v=CNFgFbQONJg), which is definitely an option for those who are willing to live frugally. The video also goes more in-depth in some alternatives that I won't mention in this article, so it's worth checking out, especially if you're interesting in burning CDs, listening on a Mac, or ripping music through other means.
+A lovely person by the name of Marcika was able to document how they were able to upload their music to a [portable MP3 player](https://www.youtube.com/watch?v=CNFgFbQONJg), which is definitely an option for those who are willing to live frugally. The video also goes more in-depth in some alternatives that I won't mention in this article, so it's worth checking out, especially if you're interested in burning CDs, listening on a Mac, or ripping music through other means.
 
 For most people with PCs, I recommend [foobar2000](https://www.foobar2000.org/). For full theming support, it's heavily advised to opt for the 32bit version, not the 64bit one. At the time of writing, I've been an active user of this software for 6-7 months, and I'm utterly floored by its compatibility & features.
 
@@ -1241,15 +1241,15 @@ If you can't find the music you're looking for, and you want the ability to list
 
 As mentioned in its [About](https://www.slsknet.org/news/node/680), it's "ad-free, spyware-free" and is simply a file-sharing network with connected peers.
 
-To put it simply, let's say you're looking for a particular rare EP in produced in 1993, and you couldn't find it through the official sources I mentioned above. 9 times out of 10, someone else may have the files for that EP, and is sharing it publicly through Soulseek. By connecting to this client, you're now free to explore the music shared by thousands of avid users. With enough dedication, you'll be able to find not only the full list of songs, but also multiple variations with different file formats.
+To put it simply, let's say you're looking for a particular rare EP produced in 1993, and you couldn't find it through the official sources I mentioned above. 9 times out of 10, someone else may have the files for that EP, and is sharing it publicly through Soulseek. By connecting to this client, you're now free to explore the music shared by thousands of avid users. With enough dedication, you'll be able to find not only the full list of songs, but also multiple variations with different file formats.
 
-Can it illegal? Yes, absolutely, if you endorse sharing of copyrighted music. I encourage everyone to stick to non-copyrighted music/works to avoid any legal issues with copyright holders.
+Is it illegal? Yes, absolutely, if you endorse sharing of copyrighted music. I encourage everyone to stick to non-copyrighted music/works to avoid any legal issues with copyright holders.
 
 As for the sharing of music, you will bear responsibility of ensuring you don't download malware or viruses, but considering the nature of the Soulseek community, which is outwardly generous & pro-sharing, it is extremely unlikely you will encounter a virus. To be safe, check the file format of your download (safe: MP3, OGG, WAV, FLAC) and ensure you're not downloading an executable, for instance.
 
 Remember to be an active participant if you decide to use Soulseek: always share, never leech. There is no penalty, but keep in mind that you can be banned by others if they see that you haven't shared any music of your own. Soulseek wouldn't exist without its users after all!
 
-## Acquring Music through yt-dlp (\*\*)
+## Acquiring Music through yt-dlp (\*\*)
 
 If you are able to find the music through the official sources, but there is no way to download it to your local library, there is a solution for this as well.
 
@@ -1263,7 +1263,7 @@ For all intents and purposes, look into the [official Wiki](https://github.com/y
 
 Again, keep in mind that it is a roundabout method to scrape a website for content, rather than visiting their official APIs. Therefore, I don't _necessarily_ recommend this option, just because you can experience throttling or even a soft ban from the service.
 
-## Transfering Music to Devices (\*)
+## Transferring Music to Devices (\*)
 
 Once you've found a workflow that works for you, you may wonder if there are ways to migrate your files to your devices. For example, most people don't just listen to music on their PCs, but they also like the availability of the music on their smartphones, tablets, etc.
 
