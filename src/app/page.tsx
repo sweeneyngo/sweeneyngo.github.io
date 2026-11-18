@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { getAllPosts } from '@/utils/posts';
 import Button from './components/Button/Button';
 import Posts from './components/Posts/Posts';
@@ -19,11 +17,7 @@ export default async function Home() {
       </header>
       <section className={styles.content}>
         <p className={styles.subtitle}>
-          Hello! I&apos;m ifu! (
-          <Link className={styles.link} href="/aliases">
-            ?
-          </Link>
-          ) <br />I create things on the web, explore interfaces, and experiment
+          Hello! I&apos;m ifu! <br />I create things on the web, explore interfaces, and experiment
           with systems. I like to write about my experiences in art, music,
           software, and digital independence<sup>†</sup>. Enjoying the pursuit
           of blogging as an exercise of a{' '}

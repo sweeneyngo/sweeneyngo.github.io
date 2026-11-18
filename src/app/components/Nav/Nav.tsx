@@ -35,12 +35,6 @@ export default function Nav() {
         <p>
           <Link href="/rss.xml">rss</Link>
         </p>
-        <p>
-          <Link href="/aliases">aliases</Link>
-        </p>
-        <p>
-          <Link href="/faq">faq</Link>
-        </p>
         <div onClick={() => handleClick()} className={styles.egg}>
           <FaEgg />
         </div>
