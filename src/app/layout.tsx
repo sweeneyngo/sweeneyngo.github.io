@@ -10,24 +10,17 @@ import generateFeed from '@/utils/rss';
 
 import { GiDiamonds } from 'react-icons/gi';
 
-import { Karla } from 'next/font/google'; // Define mainpage font
-import { Viga } from 'next/font/google';
 import { Fira_Code } from 'next/font/google';
+import localFont from 'next/font/local';
 
 import styles from './page.module.css';
 import './globals.css';
 
-const font = Karla({
-  subsets: ['latin'],
+const font = localFont({
+  src: './fonts/Allo/AlloVariableFriendly.woff2',
   display: 'swap',
   variable: '--font',
-});
-
-const display = Viga({
-  subsets: ['latin'],
-  weight: '400',
-  display: 'swap',
-  variable: '--font-display',
+  weight: '100 900',
 });
 
 const mono = Fira_Code({
@@ -53,7 +46,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${font.variable} ${display.variable} ${mono.variable}`}>
+      <body className={`${font.variable} ${mono.variable}`}>
         <div className={styles.backgroundText}>
           {backgroundText.map((item, index) => (
             <h1 key={index}>{item}</h1>
