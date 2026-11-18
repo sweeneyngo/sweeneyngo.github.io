@@ -52,7 +52,7 @@ export default function Footer() {
           </span>{' '}
           by ifu
         </p>
-        <p>© 2024 Sweeney Ngo</p>
+        <p>© 2026 Sweeney Ngo</p>
       </section>
     </footer>
   );
