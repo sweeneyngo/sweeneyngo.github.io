@@ -127,13 +127,6 @@
   border-bottom: 1px solid gray;
 }
 
-.description {
-  grid-column: 1/12;
-  position: relative;
-  grid-template-columns: subgrid;
-  grid-template-rows: auto;
-}
-
 .inline {
   display: grid;
   position: relative;

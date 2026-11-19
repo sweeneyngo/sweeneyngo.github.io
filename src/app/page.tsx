@@ -1,12 +1,11 @@
 import { getAllPosts } from '@/utils/posts';
-import Button from './components/Button/Button';
 import Posts from './components/Posts/Posts';
 import Footer from './components/Footer/Footer';
 import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 import styles from './page.module.css';
 
 export default async function Home() {
-  const posts = getAllPosts();
+  const posts = getAllPosts().slice(0, 3);
 
   return (
     <section className={styles.gridLayout}>
@@ -17,9 +16,9 @@ export default async function Home() {
       </header>
       <section className={styles.content}>
         <p className={styles.subtitle}>
-          Hello! I&apos;m ifu! <br />I create things on the web, explore interfaces, and experiment
+          I create things on the web, explore interfaces, and experiment
           with systems. I like to write about my experiences in art, music,
-          software, and digital independence<sup>†</sup>. Enjoying the pursuit
+          software, and digital independence. Enjoying the pursuit
           of blogging as an exercise of a{' '}
           <a href="https://www.asc.ohio-state.edu/kilcup.1/262/feynman.html">
             Feynmanian approach
@@ -42,32 +41,12 @@ export default async function Home() {
         </div>
 
         <div className={styles.smallHeading}>
-          <small>✱ PAST LIVES </small>
-          <div className={styles.divider} />
-        </div>
-
-        <p className={styles.description}>
-          I attended university in Los Angeles, and now working as a software
-          engineer for early-stage startups in SF. Before that, I ran a channel
-          creating silly covers with vocal synths. Often times, you&apos;ll find
-          me digging around for old technology, hacking every aspect of my life,
-          and occassionally dabbling in art and music.
-          <br />
-          <br />
-          If you&apos;d like to learn more about me, you can see what I built on{' '}
-          <a href="https://github.com/sweeneyngo">GitHub</a>. Otherwise, feel
-          free to check out the articles below.
-          <br />
-        </p>
-
-        <div className={styles.smallHeading}>
           <small>✱ ARTICLES </small>
           <div className={styles.divider} />
         </div>
 
         <div className={styles.section}>
           <Posts posts={posts} />
-          <Button />
         </div>
         <div className={styles.smallHeading}>
           <small>✱ ODE TO NEOCITIES </small>
